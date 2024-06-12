@@ -2,6 +2,7 @@ import UIKit
 
 class DevCategoryView: UIView {
     private let titleLabel = LabelFactory.createTitleLabel()
+    
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createCompositionalLayout())
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -34,11 +35,11 @@ private extension DevCategoryView {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 4),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: DevEnums.DevView.top),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: DevEnums.DevView.leading),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: DevEnums.DevView.trailing),
             
-            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
+            collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: DevEnums.DevView.spacing),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo:
@@ -64,7 +65,7 @@ private extension DevCategoryView {
 
             let section = NSCollectionLayoutSection(group: group)
             section.orthogonalScrollingBehavior = .groupPaging
-            section.interGroupSpacing = 8
+            section.interGroupSpacing = DevEnums.DevView.spacing
             section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
             
             let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(0.05))

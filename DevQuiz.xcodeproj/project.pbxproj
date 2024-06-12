@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C5AAAF142C19FF7600003D24 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF132C19FF7600003D24 /* HeaderView.swift */; };
+		C5AAAF162C1A164900003D24 /* DevEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF152C1A164900003D24 /* DevEnums.swift */; };
 		C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */; };
 		C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */; };
 		C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF52C1739E4008A9ABC /* DevCategoryViewController.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		C5AAAF132C19FF7600003D24 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		C5AAAF152C1A164900003D24 /* DevEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevEnums.swift; sourceTree = "<group>"; };
 		C5B2EEEE2C1739E4008A9ABC /* DevQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5AAAF172C1A17E300003D24 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF152C1A164900003D24 /* DevEnums.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		C5B2EEE52C1739E4008A9ABC = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +117,7 @@
 		C5B2EF0A2C17485C008A9ABC /* DevCategoryScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C5AAAF172C1A17E300003D24 /* Enum */,
 				C5B2EF1A2C175D49008A9ABC /* Model */,
 				C5B2EF0B2C1748A5008A9ABC /* View */,
 				C5B2EF0C2C1748AF008A9ABC /* Presenter */,
@@ -237,6 +248,7 @@
 				C5B2EEFC2C1739E4008A9ABC /* DevQuiz.xcdatamodeld in Sources */,
 				C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */,
 				C5B2EF1E2C175EF2008A9ABC /* NetworkService .swift in Sources */,
+				C5AAAF162C1A164900003D24 /* DevEnums.swift in Sources */,
 				C5B2EF222C176357008A9ABC /* DevCategoryPresenter.swift in Sources */,
 				C5B2EF122C174B8E008A9ABC /* LabelFactory.swift in Sources */,
 				C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */,

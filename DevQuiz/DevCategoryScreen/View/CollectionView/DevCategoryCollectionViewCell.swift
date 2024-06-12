@@ -32,13 +32,13 @@ private extension DevCategoryCollectionViewCell {
             customBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             customBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            devNameLabel.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: 16),
-            devNameLabel.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: 16),
-            devNameLabel.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: -16),
+            devNameLabel.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: DevEnums.CellConstr.top),
+            devNameLabel.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: DevEnums.CellConstr.leading),
+            devNameLabel.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: DevEnums.CellConstr.trailing),
             
-            descriptionLabel.topAnchor.constraint(equalTo: devNameLabel.bottomAnchor, constant: 8),
-            descriptionLabel.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: 16),
-            descriptionLabel.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: -16),
+            descriptionLabel.topAnchor.constraint(equalTo: devNameLabel.bottomAnchor, constant: DevEnums.CellConstr.spacing),
+            descriptionLabel.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: DevEnums.CellConstr.leading),
+            descriptionLabel.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: DevEnums.CellConstr.trailing),
         ])
     }
 }

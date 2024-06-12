@@ -24,7 +24,7 @@ private extension HeaderView {
     func setupConstrains() {
         NSLayoutConstraint.activate([
             categoryLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: DevEnums.HeaderConstr.leading),
         ])
     }
 }

@@ -34,7 +34,7 @@ private extension DevCategoryViewController {
     }
     
     func setupText() {
-        mainView.configureText(with: "Привет! \nЧто хочешь выучить сегодня?")
+        mainView.configureText(with: DevEnums.DevString.mainTitle)
     }
     
     func setupDataSource() {
