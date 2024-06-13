@@ -3,6 +3,7 @@ import UIKit
 class DevCategoryViewController: UIViewController {
     private let mainView = DevCategoryView()
     private let dataSource = DevCategoryCollectionDataSource()
+    private let delegate = DevCategoryCollectionDelegate()
     private var presenter: DevCategoryPresenter
     
     init(presenter: DevCategoryPresenter) {
@@ -29,7 +30,7 @@ class DevCategoryViewController: UIViewController {
 private extension DevCategoryViewController {
     func setupView() {
         setupDataSource()
-        //        setupDelegate()
+        setupDelegate()
         setupText()
     }
     
@@ -41,17 +42,34 @@ private extension DevCategoryViewController {
         mainView.setDataSource(dataSource)
     }
     
-    //    func setupDelegate() {
-    //        delegate.delegate = self
-    //        mainView.setDelegates(delegate)
-    //    }
+    func setupDelegate() {
+        delegate.delegate = self
+        mainView.setDelegates(delegate)
+    }
+}
+
+extension DevCategoryViewController: CategorySelectionDelegateProtocol {
+    func languageSelected(_ language: ProgrammingLanguage) {
+        presenter.languageSelected(language)
+    }
 }
 
 extension DevCategoryViewController: DevCategoryProtocol {
-    func displayCategories(categories: [DevCategory]) {
+    func displayCategories() {
+        let categories = presenter.categories
         dataSource.updateCategories(categories)
+        delegate.updateCategories(categories)
         DispatchQueue.main.async {
             self.mainView.reloadData()
         }
     }
+    
+    func navigateToView(with language: ProgrammingLanguage) {
+        let presenter = SelectionTestPresenter()
+        presenter.setSelectedLanguage(language)
+        let viewController = SelectionTestViewController(presenter: presenter)
+        viewController.title = language.name
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }
+

@@ -45,7 +45,7 @@ private extension DevCategoryCollectionViewCell {
 
 //MARK: - configure cell
 extension DevCategoryCollectionViewCell {
-    func configure(with data: DevItem) {
+    func configure(with data: ProgrammingLanguage) {
         devNameLabel.text = data.name
         descriptionLabel.text = data.description
     }

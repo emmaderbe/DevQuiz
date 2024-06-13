@@ -1,30 +1,26 @@
 import Foundation
 
 protocol DevCategoryProtocol: AnyObject {
-    func displayCategories(categories: [DevCategory])
+    func displayCategories()
+    func navigateToView(with language: ProgrammingLanguage)
 }
 
 final class DevCategoryPresenter {
     weak var view: DevCategoryProtocol?
-    private let networkService = NetworkService()
+    private let networkService = MockDataService()
+    
+    var categories: [Category] {
+        return networkService.getMockCategories()
+    }
 }
 
 extension DevCategoryPresenter {
     func viewDidLoad(view: DevCategoryProtocol) {
         self.view = view
-        fetchCategories()
+        view.displayCategories()
     }
-}
-
-private extension DevCategoryPresenter {
-    func fetchCategories() {
-        networkService.fetchData { [weak self] result in
-            switch result {
-            case .success(let categories):
-                self?.view?.displayCategories(categories: categories)
-            case .failure(let error):
-                print("Error fetching categories: \(error)")
-            }
-        }
+    
+    func languageSelected(_ language: ProgrammingLanguage) {
+        view?.navigateToView(with: language)
     }
 }
