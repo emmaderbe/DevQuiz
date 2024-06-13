@@ -32,12 +32,10 @@ private extension SelectionTestCollectionViewCell {
             customBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             customBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            testThemeLabel.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: SelectionTestEnums.CellConstr.top),
+            testThemeLabel.centerYAnchor.constraint(equalTo: customBackgroundView.centerYAnchor),
             testThemeLabel.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: SelectionTestEnums.CellConstr.leading),
-            testThemeLabel.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: SelectionTestEnums.CellConstr.trailing),
             
-            testCountLabel.topAnchor.constraint(equalTo: testThemeLabel.bottomAnchor, constant: SelectionTestEnums.CellConstr.spacing),
-            testCountLabel.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: SelectionTestEnums.CellConstr.leading),
+            testCountLabel.centerYAnchor.constraint(equalTo: customBackgroundView.centerYAnchor),
             testCountLabel.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: SelectionTestEnums.CellConstr.trailing),
         ])
     }
@@ -47,7 +45,7 @@ private extension SelectionTestCollectionViewCell {
 extension SelectionTestCollectionViewCell {
     func configure(with data: Topic) {
         testThemeLabel.text = data.name
-        testCountLabel.text = String(data.questions.count)
+        testCountLabel.text = String("\(data.questions.count) шт.")
     }
 }
 
