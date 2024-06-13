@@ -3,6 +3,13 @@ import Foundation
 struct Category: Codable {
     let title: String
     let icon: String
+    let languages: [ProgrammingLanguage]
+}
+
+struct ProgrammingLanguage: Codable {
+    let name: String
+    let description: String
+    let icon: String
     let topics: [Topic]
 }
 

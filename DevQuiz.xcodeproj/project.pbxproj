@@ -15,6 +15,7 @@
 		C5AAAF242C1A1BC000003D24 /* SelectionTestDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF232C1A1BC000003D24 /* SelectionTestDataSource.swift */; };
 		C5AAAF262C1A1CD400003D24 /* SelectionTestEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF252C1A1CD400003D24 /* SelectionTestEnums.swift */; };
 		C5AAAF292C1B58A900003D24 /* SelectionTestPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF282C1B58A900003D24 /* SelectionTestPresenter.swift */; };
+		C5AAAF2B2C1B631800003D24 /* DevCategoryCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF2A2C1B631800003D24 /* DevCategoryCollectionDelegate.swift */; };
 		C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */; };
 		C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */; };
 		C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF52C1739E4008A9ABC /* DevCategoryViewController.swift */; };
@@ -41,6 +42,7 @@
 		C5AAAF232C1A1BC000003D24 /* SelectionTestDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTestDataSource.swift; sourceTree = "<group>"; };
 		C5AAAF252C1A1CD400003D24 /* SelectionTestEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTestEnums.swift; sourceTree = "<group>"; };
 		C5AAAF282C1B58A900003D24 /* SelectionTestPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTestPresenter.swift; sourceTree = "<group>"; };
+		C5AAAF2A2C1B631800003D24 /* DevCategoryCollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevCategoryCollectionDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEEE2C1739E4008A9ABC /* DevQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				C5B2EF0F2C174A2F008A9ABC /* DevCategoryCollectionViewCell.swift */,
 				C5B2EF1F2C1760F1008A9ABC /* DevCategoryDataSource.swift */,
+				C5AAAF2A2C1B631800003D24 /* DevCategoryCollectionDelegate.swift */,
 				C5AAAF132C19FF7600003D24 /* HeaderView.swift */,
 			);
 			path = CollectionView;
@@ -318,6 +321,7 @@
 				C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */,
 				C5B2EF172C174F6F008A9ABC /* StackFactory.swift in Sources */,
 				C5AAAF292C1B58A900003D24 /* SelectionTestPresenter.swift in Sources */,
+				C5AAAF2B2C1B631800003D24 /* DevCategoryCollectionDelegate.swift in Sources */,
 				C5AAAF262C1A1CD400003D24 /* SelectionTestEnums.swift in Sources */,
 				C5B2EF1C2C175D6B008A9ABC /* DevCategoriesResponse.swift in Sources */,
 				C5AAAF142C19FF7600003D24 /* HeaderView.swift in Sources */,

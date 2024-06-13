@@ -95,10 +95,10 @@ extension DevCategoryView {
     func setDataSource(_ dataSource: DevCategoryCollectionDataSource) {
         collectionView.dataSource = dataSource
     }
-//    
-//    func setDelegates(_ delegate: _) {
-//        collectionView.delegate = delegate
-//    }
+    
+    func setDelegates(_ delegate: DevCategoryCollectionDelegate) {
+        collectionView.delegate = delegate
+    }
     
     func reloadData() {
         collectionView.reloadData()

@@ -21,7 +21,7 @@ extension SelectionTestDataSource {
 //MARK: - cellForItemAt
 extension SelectionTestDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DevCategoryCollectionViewCell.identifier, for: indexPath) as?  DevCategoryCollectionViewCell else {return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SelectionTestCollectionViewCell.identifier, for: indexPath) as?  SelectionTestCollectionViewCell else {return UICollectionViewCell() }
         let data = topics[indexPath.row]
         cell.configure(with: data)
         return cell

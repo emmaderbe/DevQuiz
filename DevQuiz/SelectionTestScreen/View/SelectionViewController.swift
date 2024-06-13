@@ -43,8 +43,8 @@ private extension SelectionTestViewController {
 }
 
 extension SelectionTestViewController: SelectionTestProtocol {
-    func displayTopicks(topic: [Topic]) {
-        dataSource.updateTopics(topic)
+    func displayTopics(topics: [Topic]) {
+        dataSource.updateTopics(topics)
         DispatchQueue.main.async {
             self.selectionTestView.reloadData()
         }

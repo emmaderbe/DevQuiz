@@ -18,7 +18,7 @@ extension DevCategoryCollectionDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories[section].topics.count
+        return categories[section].languages.count
     }
 }
 
@@ -26,7 +26,7 @@ extension DevCategoryCollectionDataSource {
 extension DevCategoryCollectionDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DevCategoryCollectionViewCell.identifier, for: indexPath) as?  DevCategoryCollectionViewCell else {return UICollectionViewCell() }
-        let data = categories[indexPath.section].topics[indexPath.row]
+        let data = categories[indexPath.section].languages[indexPath.row]
         cell.configure(with: data)
         return cell
     }
