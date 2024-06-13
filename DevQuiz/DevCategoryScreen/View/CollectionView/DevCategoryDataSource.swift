@@ -2,11 +2,11 @@ import UIKit
 
 //MARK: - Property
 final class DevCategoryCollectionDataSource: NSObject, UICollectionViewDataSource {
-    private var categories: [DevCategory] = []
+    private var categories: [Category] = []
 }
 
 extension DevCategoryCollectionDataSource {
-    func updateCategories(_ categories: [DevCategory]) {
+    func updateCategories(_ categories: [Category]) {
         self.categories = categories
     }
 }
@@ -18,7 +18,7 @@ extension DevCategoryCollectionDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories[section].items.count
+        return categories[section].topics.count
     }
 }
 
@@ -26,7 +26,7 @@ extension DevCategoryCollectionDataSource {
 extension DevCategoryCollectionDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DevCategoryCollectionViewCell.identifier, for: indexPath) as?  DevCategoryCollectionViewCell else {return UICollectionViewCell() }
-        let data = categories[indexPath.section].items[indexPath.row]
+        let data = categories[indexPath.section].topics[indexPath.row]
         cell.configure(with: data)
         return cell
     }

@@ -1,12 +1,12 @@
 import Foundation
 
 protocol DevCategoryProtocol: AnyObject {
-    func displayCategories(categories: [DevCategory])
+    func displayCategories(categories: [Category])
 }
 
 final class DevCategoryPresenter {
     weak var view: DevCategoryProtocol?
-    private let networkService = NetworkService()
+    private let networkService = MockDataService()
 }
 
 extension DevCategoryPresenter {
@@ -18,13 +18,7 @@ extension DevCategoryPresenter {
 
 private extension DevCategoryPresenter {
     func fetchCategories() {
-        networkService.fetchData { [weak self] result in
-            switch result {
-            case .success(let categories):
-                self?.view?.displayCategories(categories: categories)
-            case .failure(let error):
-                print("Error fetching categories: \(error)")
-            }
-        }
+        let categories = networkService.getMockCategories()
+        view?.displayCategories(categories: categories)
     }
 }

@@ -1,11 +1,11 @@
 import UIKit
 
-class DevCategoryViewController: UIViewController {
-    private let mainView = DevCategoryView()
-    private let dataSource = DevCategoryCollectionDataSource()
-    private var presenter: DevCategoryPresenter
+class SelectionTestViewController: UIViewController {
+    private let selectionTestView = SelectionTestView()
+    private let dataSource = SelectionTestDataSource()
+    private var presenter: SelectionTestPresenter
     
-    init(presenter: DevCategoryPresenter) {
+    init(presenter: SelectionTestPresenter) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -16,7 +16,7 @@ class DevCategoryViewController: UIViewController {
     }
     
     override func loadView() {
-        view = mainView
+        view = selectionTestView
     }
     
     override func viewDidLoad() {
@@ -26,19 +26,14 @@ class DevCategoryViewController: UIViewController {
     }
 }
 
-private extension DevCategoryViewController {
+private extension SelectionTestViewController {
     func setupView() {
         setupDataSource()
         //        setupDelegate()
-        setupText()
-    }
-    
-    func setupText() {
-        mainView.configureText(with: DevEnums.DevString.mainTitle)
     }
     
     func setupDataSource() {
-        mainView.setDataSource(dataSource)
+        selectionTestView.setDataSource(dataSource)
     }
     
     //    func setupDelegate() {
@@ -47,11 +42,11 @@ private extension DevCategoryViewController {
     //    }
 }
 
-extension DevCategoryViewController: DevCategoryProtocol {
-    func displayCategories(categories: [Category]) {
-        dataSource.updateCategories(categories)
+extension SelectionTestViewController: SelectionTestProtocol {
+    func displayTopicks(topic: [Topic]) {
+        dataSource.updateTopics(topic)
         DispatchQueue.main.async {
-            self.mainView.reloadData()
+            self.selectionTestView.reloadData()
         }
     }
 }
