@@ -2,6 +2,8 @@ import Foundation
 
 protocol QuizViewProtocol: AnyObject {
     func displayQuestion(_ question: Question, current: Int, total: Int)
+    func highlightOptionButton(isCorrect: Bool, buttonIndex: Int)
+    func resetOptionButtons()
 }
 
 final class QuizPresenter {
@@ -19,26 +21,25 @@ extension QuizPresenter {
     func setSelectedQuiz(_ questions: [Question]) {
         self.questions = questions
     }
-}
-
-extension QuizPresenter {
-    func answerSelected(_ answer: String) {
-        guard currentQuestionIndex < questions!.count else { return }
-        let correctAnswer = questions![currentQuestionIndex].correctAnswer
-        if answer == correctAnswer {
-            print("Correct!")
-        } else {
-            print("Incorrect!")
+    
+    func answerSelected(_ answer: String, buttonIndex: Int) {
+        guard let questions = questions, currentQuestionIndex < questions.count else { return }
+        let correctAnswer = questions[currentQuestionIndex].correctAnswer
+        let isCorrect = answer == correctAnswer
+        view?.highlightOptionButton(isCorrect: isCorrect, buttonIndex: buttonIndex)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
+            self?.currentQuestionIndex += 1
+            self?.view?.resetOptionButtons()
+            self?.showCurrentQuestion()
         }
-        currentQuestionIndex += 1
-        showCurrentQuestion()
     }
 }
 
 private extension QuizPresenter {
-    private func showCurrentQuestion() {
-        guard currentQuestionIndex < questions!.count else { return }
-        let question = questions![currentQuestionIndex]
-        view?.displayQuestion(question, current: currentQuestionIndex + 1, total: questions!.count)
+    func showCurrentQuestion() {
+        guard let questions = questions, currentQuestionIndex < questions.count else { return }
+        let question = questions[currentQuestionIndex]
+        view?.displayQuestion(question, current: currentQuestionIndex + 1, total: questions.count)
     }
 }

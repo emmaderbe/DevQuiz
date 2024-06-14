@@ -58,11 +58,14 @@ extension QuizView {
     func updateQuestion(_ question: String) {
         questionLabel.text = question
     }
-    
+}
+
+extension QuizView {
     func updateOptions(_ options: [String], target: Any, action: Selector) {
         optionButtons.forEach { $0.removeFromSuperview() }
-        optionButtons = options.map { option in
+        optionButtons = options.enumerated().map { index, option in
             let button = UIButton(type: .system)
+            button.tag = index
             button.translatesAutoresizingMaskIntoConstraints = false
             button.setTitle(option, for: .normal)
             button.addTarget(target, action: action, for: .touchUpInside)
@@ -88,5 +91,15 @@ extension QuizView {
             }
             previousButton = button
         }
+    }
+    
+    func highlightButton(at index: Int, isCorrect: Bool) {
+        guard index < optionButtons.count else { return }
+        let button = optionButtons[index]
+        button.backgroundColor = isCorrect ? .systemGreen : .systemRed
+    }
+    
+    func resetButtonColors() {
+        optionButtons.forEach { $0.backgroundColor = .systemGray5 }
     }
 }

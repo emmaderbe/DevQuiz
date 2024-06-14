@@ -27,7 +27,7 @@ class QuizViewController: UIViewController {
 private extension QuizViewController {
     @objc private func optionButtonTapped(_ sender: UIButton) {
         guard let answer = sender.title(for: .normal) else { return }
-        presenter.answerSelected(answer)
+        presenter.answerSelected(answer, buttonIndex: sender.tag)
     }
 }
 
@@ -36,6 +36,14 @@ extension QuizViewController: QuizViewProtocol {
         quizView.updateProgress(current: current, total: total)
         quizView.updateQuestion(question.text)
         quizView.updateOptions(question.options, target: self, action: #selector(optionButtonTapped(_:)))
+    }
+    
+    func highlightOptionButton(isCorrect: Bool, buttonIndex: Int) {
+        quizView.highlightButton(at: buttonIndex, isCorrect: isCorrect)
+    }
+    
+    func resetOptionButtons() {
+        quizView.resetButtonColors()
     }
 }
 
