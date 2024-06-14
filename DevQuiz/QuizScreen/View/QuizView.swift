@@ -34,18 +34,56 @@ private extension QuizView {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            progressLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+            progressLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: QuizEnums.QuizView.top),
             progressLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            progressBar.topAnchor.constraint(equalTo: progressLabel.bottomAnchor, constant: 16),
-            progressBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            progressBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            progressBar.topAnchor.constraint(equalTo: progressLabel.bottomAnchor, constant: QuizEnums.QuizView.top),
+            progressBar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: QuizEnums.QuizView.leading),
+            progressBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: QuizEnums.QuizView.trailing),
             
-            questionLabel.topAnchor.constraint(equalTo: progressBar.bottomAnchor, constant: 32),
-            questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            questionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            questionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 80)
+            questionLabel.topAnchor.constraint(equalTo: progressBar.bottomAnchor, constant: QuizEnums.QuizView.spacing),
+            questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: QuizEnums.QuizView.leading),
+            questionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: QuizEnums.QuizView.trailing),
+            questionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: QuizEnums.QuizView.labelHeight)
         ])
+    }
+}
+
+private extension QuizView {
+    func createOptionButton(title: String, tag: Int, target: Any, action: Selector) -> UIButton {
+        let button = UIButton(type: .system)
+        button.tag = tag
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(title, for: .normal)
+        button.addTarget(target, action: action, for: .touchUpInside)
+        button.layer.cornerRadius = QuizEnums.QuizView.cornerRadius
+        button.backgroundColor = .systemGray5
+        button.setTitleColor(.black, for: .normal)
+        return button
+    }
+    
+    func addButtonsToView(_ buttons: [UIButton]) {
+        optionButtons.forEach { $0.removeFromSuperview() }
+        optionButtons = buttons
+        optionButtons.forEach { addSubview($0) }
+    }
+    
+    func setButtonConstraints() {
+        var previousButton: UIButton?
+        for button in optionButtons {
+            NSLayoutConstraint.activate([
+                button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: QuizEnums.QuizView.leading),
+                button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: QuizEnums.QuizView.trailing),
+                button.heightAnchor.constraint(equalToConstant: QuizEnums.QuizView.buttonHeight)
+            ])
+            
+            if let previousButton = previousButton {
+                button.topAnchor.constraint(equalTo: previousButton.bottomAnchor, constant: QuizEnums.QuizView.top).isActive = true
+            } else {
+                button.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: QuizEnums.QuizView.spacing).isActive = true
+            }
+            previousButton = button
+        }
     }
 }
 
@@ -62,35 +100,9 @@ extension QuizView {
 
 extension QuizView {
     func updateOptions(_ options: [String], target: Any, action: Selector) {
-        optionButtons.forEach { $0.removeFromSuperview() }
-        optionButtons = options.enumerated().map { index, option in
-            let button = UIButton(type: .system)
-            button.tag = index
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.setTitle(option, for: .normal)
-            button.addTarget(target, action: action, for: .touchUpInside)
-            button.layer.cornerRadius = 8
-            button.backgroundColor = .systemGray5
-            button.setTitleColor(.black, for: .normal)
-            return button
-        }
-        
-        var previousButton: UIButton?
-        for button in optionButtons {
-            addSubview(button)
-            NSLayoutConstraint.activate([
-                button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-                button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-                button.heightAnchor.constraint(equalToConstant: 44)
-            ])
-            
-            if let previousButton = previousButton {
-                button.topAnchor.constraint(equalTo: previousButton.bottomAnchor, constant: 16).isActive = true
-            } else {
-                button.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 40).isActive = true
-            }
-            previousButton = button
-        }
+        let buttons = options.enumerated().map { createOptionButton(title: $1, tag: $0, target: target, action: action) }
+        addButtonsToView(buttons)
+        setButtonConstraints()
     }
     
     func highlightButton(at index: Int, isCorrect: Bool) {
