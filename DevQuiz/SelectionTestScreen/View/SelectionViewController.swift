@@ -3,6 +3,7 @@ import UIKit
 class SelectionTestViewController: UIViewController {
     private let selectionTestView = SelectionTestView()
     private let dataSource = SelectionTestDataSource()
+    private let delegate = SelectionTestDelegate()
     private var presenter: SelectionTestPresenter
     
     init(presenter: SelectionTestPresenter) {
@@ -29,24 +30,38 @@ class SelectionTestViewController: UIViewController {
 private extension SelectionTestViewController {
     func setupView() {
         setupDataSource()
-        //        setupDelegate()
+        setupDelegate()
     }
     
     func setupDataSource() {
         selectionTestView.setDataSource(dataSource)
     }
     
-    //    func setupDelegate() {
-    //        delegate.delegate = self
-    //        mainView.setDelegates(delegate)
-    //    }
+    func setupDelegate() {
+        delegate.delegate = self
+        selectionTestView.setDelegates(delegate)
+    }
 }
 
 extension SelectionTestViewController: SelectionTestProtocol {
     func displayTopics(topics: [Topic]) {
         dataSource.updateTopics(topics)
+        delegate.updateTopics(topics)
         DispatchQueue.main.async {
             self.selectionTestView.reloadData()
         }
+    }
+    
+    func navigateToView(with questions: [Question]) {
+        let presenter = QuizPresenter()
+        presenter.setSelectedQuiz(questions)
+        let viewController = QuizViewController(presenter: presenter)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+extension SelectionTestViewController: SelectionTestDelegateProtocol {
+    func questionsSelected(_ questions: [Question]) {
+        presenter.topicSelected(questions)
     }
 }

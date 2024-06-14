@@ -49,7 +49,6 @@ private extension DevCategoryView {
 }
 
 //MARK: - create Layout
-
 private extension DevCategoryView {
     func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment -> NSCollectionLayoutSection? in

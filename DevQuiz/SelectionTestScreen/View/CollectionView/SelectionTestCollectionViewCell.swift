@@ -2,7 +2,7 @@ import UIKit
 
 final class SelectionTestCollectionViewCell: UICollectionViewCell {
     private let customBackgroundView = BackgroundViewFactory.createBackroundView()
-    private let testThemeLabel = LabelFactory.createSubTitleLabel()
+    private let testThemeLabel = LabelFactory.createSubTitleLabel(aligment: .left)
     private let testCountLabel = LabelFactory.createOrdinaryLabel()
     
     override init(frame: CGRect) {

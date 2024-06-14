@@ -2,6 +2,7 @@ import Foundation
 
 protocol SelectionTestProtocol: AnyObject {
     func displayTopics(topics: [Topic])
+    func navigateToView(with questions: [Question])
 }
 
 final class SelectionTestPresenter {
@@ -10,13 +11,19 @@ final class SelectionTestPresenter {
 }
 
 extension SelectionTestPresenter {
+    func setSelectedLanguage(_ language: ProgrammingLanguage) {
+        self.selectedLanguage = language
+    }
+    
     func viewDidLoad(view: SelectionTestProtocol) {
         self.view = view
         fetchTopics()
     }
-    
-    func setSelectedLanguage(_ language: ProgrammingLanguage) {
-        self.selectedLanguage = language
+}
+
+extension SelectionTestPresenter {
+    func topicSelected(_ questions: [Question]) {
+        view?.navigateToView(with: questions)
     }
 }
 
