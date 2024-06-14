@@ -11,10 +11,10 @@ final class LabelFactory {
         return label
     }
     
-    static func createSubTitleLabel() -> UILabel {
+    static func createSubTitleLabel(aligment: NSTextAlignment) -> UILabel {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .medium)
-        label.textAlignment = .left
+        label.textAlignment = aligment
         label.textColor = .black
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
