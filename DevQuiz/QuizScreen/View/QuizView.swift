@@ -2,7 +2,6 @@ import UIKit
 
 class QuizView: UIView {
     private let progressLabel = LabelFactory.createOrdinaryLabel()
-    
     private let progressBar: UIProgressView = {
         let progressView = UIProgressView(progressViewStyle: .default)
         progressView.translatesAutoresizingMaskIntoConstraints = false
@@ -10,6 +9,7 @@ class QuizView: UIView {
     }()
     
     private let questionLabel = LabelFactory.createSubTitleLabel(aligment: .center)
+    
     private var optionButtons: [UIButton] = []
     
     override init(frame: CGRect) {
@@ -22,15 +22,17 @@ class QuizView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func setupView() {
+}
+
+private extension QuizView {
+    func setupView() {
         backgroundColor = .white
         addSubview(progressLabel)
         addSubview(progressBar)
         addSubview(questionLabel)
     }
     
-    private func setupConstraints() {
+    func setupConstraints() {
         NSLayoutConstraint.activate([
             progressLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
             progressLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -45,7 +47,9 @@ class QuizView: UIView {
             questionLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 80)
         ])
     }
-    
+}
+
+extension QuizView {
     func updateProgress(current: Int, total: Int) {
         progressLabel.text = "\(current)/\(total)"
         progressBar.progress = Float(current) / Float(total)

@@ -6,12 +6,8 @@ protocol QuizViewProtocol: AnyObject {
 
 final class QuizPresenter {
     weak var view: QuizViewProtocol?
-    private var questions: [Question]
+    private var questions: [Question]?
     private var currentQuestionIndex = 0
-    
-    init(questions: [Question]) {
-        self.questions = questions
-    }
 }
 
 extension QuizPresenter {
@@ -20,9 +16,15 @@ extension QuizPresenter {
         showCurrentQuestion()
     }
     
+    func setSelectedQuiz(_ questions: [Question]) {
+        self.questions = questions
+    }
+}
+
+extension QuizPresenter {
     func answerSelected(_ answer: String) {
-        guard currentQuestionIndex < questions.count else { return }
-        let correctAnswer = questions[currentQuestionIndex].correctAnswer
+        guard currentQuestionIndex < questions!.count else { return }
+        let correctAnswer = questions![currentQuestionIndex].correctAnswer
         if answer == correctAnswer {
             print("Correct!")
         } else {
@@ -35,8 +37,8 @@ extension QuizPresenter {
 
 private extension QuizPresenter {
     private func showCurrentQuestion() {
-        guard currentQuestionIndex < questions.count else { return }
-        let question = questions[currentQuestionIndex]
-        view?.displayQuestion(question, current: currentQuestionIndex + 1, total: questions.count)
+        guard currentQuestionIndex < questions!.count else { return }
+        let question = questions![currentQuestionIndex]
+        view?.displayQuestion(question, current: currentQuestionIndex + 1, total: questions!.count)
     }
 }

@@ -19,6 +19,7 @@
 		C5AAAF302C1B7F6F00003D24 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF2F2C1B7F6F00003D24 /* QuizView.swift */; };
 		C5AAAF322C1C7D6C00003D24 /* QuizPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF312C1C7D6C00003D24 /* QuizPresenter.swift */; };
 		C5AAAF342C1C92B500003D24 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF332C1C92B500003D24 /* QuizViewController.swift */; };
+		C5AAAF362C1C957500003D24 /* SelectionTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF352C1C957500003D24 /* SelectionTestDelegate.swift */; };
 		C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */; };
 		C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */; };
 		C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF52C1739E4008A9ABC /* DevCategoryViewController.swift */; };
@@ -49,6 +50,7 @@
 		C5AAAF2F2C1B7F6F00003D24 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		C5AAAF312C1C7D6C00003D24 /* QuizPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenter.swift; sourceTree = "<group>"; };
 		C5AAAF332C1C92B500003D24 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		C5AAAF352C1C957500003D24 /* SelectionTestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTestDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEEE2C1739E4008A9ABC /* DevQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				C5AAAF212C1A1B7D00003D24 /* SelectionTestCollectionViewCell.swift */,
+				C5AAAF352C1C957500003D24 /* SelectionTestDelegate.swift */,
 				C5AAAF232C1A1BC000003D24 /* SelectionTestDataSource.swift */,
 			);
 			path = CollectionView;
@@ -351,6 +354,7 @@
 				C5B2EF222C176357008A9ABC /* DevCategoryPresenter.swift in Sources */,
 				C5B2EF122C174B8E008A9ABC /* LabelFactory.swift in Sources */,
 				C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */,
+				C5AAAF362C1C957500003D24 /* SelectionTestDelegate.swift in Sources */,
 				C5B2EF0E2C174905008A9ABC /* DevCategoryView.swift in Sources */,
 				C5AAAF242C1A1BC000003D24 /* SelectionTestDataSource.swift in Sources */,
 				C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */,

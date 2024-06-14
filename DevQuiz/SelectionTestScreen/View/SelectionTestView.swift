@@ -41,7 +41,6 @@ private extension SelectionTestView {
 }
 
 //MARK: - create Layout
-
 private extension SelectionTestView {
     func createCompositionalLayout() -> UICollectionViewLayout {
             let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment -> NSCollectionLayoutSection? in
@@ -74,10 +73,10 @@ extension SelectionTestView {
     func setDataSource(_ dataSource: SelectionTestDataSource) {
         collectionView.dataSource = dataSource
     }
-//
-//    func setDelegates(_ delegate: _) {
-//        collectionView.delegate = delegate
-//    }
+
+    func setDelegates(_ delegate: SelectionTestDelegate) {
+        collectionView.delegate = delegate
+    }
     
     func reloadData() {
         collectionView.reloadData()

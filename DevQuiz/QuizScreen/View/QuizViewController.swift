@@ -22,7 +22,9 @@ class QuizViewController: UIViewController {
         super.viewDidLoad()
         presenter.viewDidLoad(view: self)
     }
-    
+}
+
+private extension QuizViewController {
     @objc private func optionButtonTapped(_ sender: UIButton) {
         guard let answer = sender.title(for: .normal) else { return }
         presenter.answerSelected(answer)
