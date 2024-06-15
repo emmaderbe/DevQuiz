@@ -40,4 +40,24 @@ final class LabelFactory {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }
+    
+    static func createBoldSmallOrdinaryLabel(aligment: NSTextAlignment) -> UILabel {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 15, weight: .medium)
+        label.textAlignment = aligment
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }
+    
+    static func createSmallOrdinaryLabel() -> UILabel {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.textAlignment = .left
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }
 }

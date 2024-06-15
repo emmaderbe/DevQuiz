@@ -34,9 +34,12 @@ class ResultView: UIView {
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
+        button.addTarget(self, action: #selector(endQuizButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    var onEndQuizButtonTapped: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -113,6 +116,12 @@ private extension ResultView {
             endQuizButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             endQuizButton.heightAnchor.constraint(equalToConstant: 50),
         ])
+    }
+}
+
+private extension ResultView {
+    @objc func endQuizButtonTapped() {
+        onEndQuizButtonTapped?()
     }
 }
 

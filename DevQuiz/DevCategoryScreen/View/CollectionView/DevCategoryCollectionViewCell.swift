@@ -2,8 +2,8 @@ import UIKit
 
 final class DevCategoryCollectionViewCell: UICollectionViewCell {
     private let customBackgroundView = BackgroundViewFactory.createBackroundView()
-    private let devNameLabel = LabelFactory.createBoldOrdinaryLabel(aligment: .left)
-    private let descriptionLabel = LabelFactory.createOrdinaryLabel()
+    private let devNameLabel = LabelFactory.createBoldSmallOrdinaryLabel(aligment: .left)
+    private let descriptionLabel = LabelFactory.createSmallOrdinaryLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
