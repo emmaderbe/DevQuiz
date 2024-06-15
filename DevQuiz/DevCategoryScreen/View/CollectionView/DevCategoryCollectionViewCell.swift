@@ -2,7 +2,7 @@ import UIKit
 
 final class DevCategoryCollectionViewCell: UICollectionViewCell {
     private let customBackgroundView = BackgroundViewFactory.createBackroundView()
-    private let devNameLabel = LabelFactory.createSubTitleLabel(aligment: .left)
+    private let devNameLabel = LabelFactory.createBoldOrdinaryLabel(aligment: .left)
     private let descriptionLabel = LabelFactory.createOrdinaryLabel()
     
     override init(frame: CGRect) {
