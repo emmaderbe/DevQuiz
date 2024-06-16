@@ -69,6 +69,7 @@ extension DevCategoryViewController: DevCategoryProtocol {
         presenter.setSelectedLanguage(language)
         let viewController = SelectionTestViewController(presenter: presenter)
         viewController.title = language.name
+        viewController.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
