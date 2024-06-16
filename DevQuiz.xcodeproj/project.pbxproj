@@ -25,6 +25,7 @@
 		C5AAAF402C1CB15200003D24 /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF3F2C1CB15200003D24 /* ImageFactory.swift */; };
 		C5AAAF422C1CBD7000003D24 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF412C1CBD7000003D24 /* ResultViewController.swift */; };
 		C5AAAF442C1E0E2100003D24 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF432C1E0E2100003D24 /* ResultPresenter.swift */; };
+		C5AAAF462C1F1C2600003D24 /* ResultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF452C1F1C2600003D24 /* ResultEnum.swift */; };
 		C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */; };
 		C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */; };
 		C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF52C1739E4008A9ABC /* DevCategoryViewController.swift */; };
@@ -61,6 +62,7 @@
 		C5AAAF3F2C1CB15200003D24 /* ImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFactory.swift; sourceTree = "<group>"; };
 		C5AAAF412C1CBD7000003D24 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		C5AAAF432C1E0E2100003D24 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
+		C5AAAF452C1F1C2600003D24 /* ResultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEnum.swift; sourceTree = "<group>"; };
 		C5B2EEEE2C1739E4008A9ABC /* DevQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 		C5AAAF3A2C1CA62200003D24 /* ResultScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C5AAAF472C1F1C2C00003D24 /* Enum */,
 				C5AAAF3C2C1CA64200003D24 /* View */,
 				C5AAAF3B2C1CA63C00003D24 /* Presenter */,
 			);
@@ -204,6 +207,14 @@
 				C5AAAF3D2C1CA66000003D24 /* ResultView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C5AAAF472C1F1C2C00003D24 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF452C1F1C2600003D24 /* ResultEnum.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		C5B2EEE52C1739E4008A9ABC = {
@@ -417,6 +428,7 @@
 				C5AAAF142C19FF7600003D24 /* HeaderView.swift in Sources */,
 				C5AAAF322C1C7D6C00003D24 /* QuizPresenter.swift in Sources */,
 				C5AAAF382C1CA20600003D24 /* QuizEnums.swift in Sources */,
+				C5AAAF462C1F1C2600003D24 /* ResultEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,17 +23,17 @@ class ResultView: UIView {
     private let categoryVerticStack = StackFactory.createSmallVerticalStack()
     private let technologyVerticStack = StackFactory.createSmallVerticalStack()
     
-    private let firstHorizStack = StackFactory.createHorizontalStack(with: 16)
-    private let secondHorizStack = StackFactory.createHorizontalStack(with: 16)
-    private let thirdHorizStack = StackFactory.createHorizontalStack(with: 16)
-    private let verticStack = StackFactory.createVerticalStack(with: 16)
+    private let firstHorizStack = StackFactory.createHorizontalStack(with: ResultEnum.ResultView.spacing)
+    private let secondHorizStack = StackFactory.createHorizontalStack(with: ResultEnum.ResultView.spacing)
+    private let thirdHorizStack = StackFactory.createHorizontalStack(with: ResultEnum.ResultView.spacing)
+    private let verticStack = StackFactory.createVerticalStack(with: ResultEnum.ResultView.spacing)
     
     private let endQuizButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Закончить", for: .normal)
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = ResultEnum.ResultView.cornerRadius
         button.addTarget(self, action: #selector(endQuizButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -90,31 +90,31 @@ private extension ResultView {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            titleImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 8),
-            titleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            titleImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: ResultEnum.ResultView.top),
+            titleImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ResultEnum.ResultView.leading),
             
-            titleLabel.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: 16),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            titleLabel.topAnchor.constraint(equalTo: titleImage.bottomAnchor, constant: ResultEnum.ResultView.spacing),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ResultEnum.ResultView.leading),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ResultEnum.ResultView.trailing),
             
-            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
-            subtitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            subtitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: ResultEnum.ResultView.spacing),
+            subtitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ResultEnum.ResultView.leading),
+            subtitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ResultEnum.ResultView.trailing),
             
-            customBackgroundView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 24),
-            customBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            customBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            customBackgroundView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
+            customBackgroundView.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: ResultEnum.ResultView.mediumSpacing),
+            customBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ResultEnum.ResultView.leading),
+            customBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ResultEnum.ResultView.trailing),
+            customBackgroundView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: ResultEnum.ResultView.backgroundHeight),
             
-            verticStack.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: 16),
-            verticStack.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: 16),
-            verticStack.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: -16),
-            verticStack.bottomAnchor.constraint(equalTo: customBackgroundView.bottomAnchor, constant: -16),
+            verticStack.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: ResultEnum.ResultView.spacing),
+            verticStack.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: ResultEnum.ResultView.leading),
+            verticStack.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: ResultEnum.ResultView.trailing),
+            verticStack.bottomAnchor.constraint(equalTo: customBackgroundView.bottomAnchor, constant: ResultEnum.ResultView.bottom),
             
-            endQuizButton.topAnchor.constraint(equalTo: customBackgroundView.bottomAnchor, constant: 32),
-            endQuizButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            endQuizButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            endQuizButton.heightAnchor.constraint(equalToConstant: 50),
+            endQuizButton.topAnchor.constraint(equalTo: customBackgroundView.bottomAnchor, constant: ResultEnum.ResultView.largeSpacing),
+            endQuizButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: ResultEnum.ResultView.leading),
+            endQuizButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: ResultEnum.ResultView.trailing),
+            endQuizButton.heightAnchor.constraint(equalTo: heightAnchor, multiplier: ResultEnum.ResultView.buttonHeight),
         ])
     }
 }
@@ -131,22 +131,26 @@ extension ResultView {
         titleLabel.text = title
         subtitleLabel.text = subtitle
     }
-    
+}
+
+extension ResultView {
     func setupResultTitle(result: String, category: String, technology: String) {
         resultTitleLabel.text =  result
         categoryTitleLabel.text = category
         technologyTitleLabel.text = technology
     }
     
-    func setupResultText(result: String, category: String, technology: String) {
-        resultLabel.text = result
-        categoryLabel.text = category
-        technologyLabel.text = technology
-    }
-    
     func setupResultImage(result: String, category: String, technology: String) {
         resultImage.image = UIImage(systemName: result)
         categoryImage.image = UIImage(systemName: category)
         technologyImage.image = UIImage(systemName: technology)
+    }
+}
+
+extension ResultView {
+    func setupResultText(result: String, category: String, technology: String) {
+        resultLabel.text = result
+        categoryLabel.text = category
+        technologyLabel.text = technology
     }
 }

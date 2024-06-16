@@ -34,18 +34,18 @@ private extension ResultViewController {
     }
     
     func setupTitle() {
-        resultView.setupTitle(with: "exclamationmark.circle.fill",
-                              and: "Неплохо",
-                              and: "Следует подучить, но сейчас ты хорошо справился")
+        resultView.setupTitle(with: ResultEnum.ResultImage.mediumResultTitleImage,
+                              and: ResultEnum.ResultString.mediumResultTitle,
+                              and:ResultEnum.ResultString.mediumResultDescription)
     }
     
     func setupResultTitle() {
-        resultView.setupResultTitle(result: "Правильных ответов:",
-                                    category: "Тема квиза:",
-                                    technology: "Язык:")
-        resultView.setupResultImage(result: "questionmark.circle",
-                                    category: "book",
-                                    technology: "chevron.left.slash.chevron.right")
+        resultView.setupResultTitle(result: ResultEnum.ResultString.resultTitle,
+                                    category: ResultEnum.ResultString.categoryTitle,
+                                    technology: ResultEnum.ResultString.technologyTitle)
+        resultView.setupResultImage(result: ResultEnum.ResultImage.resultTitleImage,
+                                    category: ResultEnum.ResultImage.categoryTitleImage,
+                                    technology: ResultEnum.ResultImage.technologyTitleImage)
     }
 }
 
