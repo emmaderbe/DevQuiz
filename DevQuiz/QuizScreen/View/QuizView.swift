@@ -8,7 +8,7 @@ class QuizView: UIView {
         return progressView
     }()
     
-    private let questionLabel = LabelFactory.createSubTitleLabel(aligment: .center)
+    private let questionLabel = LabelFactory.createBoldOrdinaryLabel(aligment: .center)
     
     private var optionButtons: [UIButton] = []
     

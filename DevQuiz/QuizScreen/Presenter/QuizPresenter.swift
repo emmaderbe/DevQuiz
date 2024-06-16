@@ -4,6 +4,7 @@ protocol QuizViewProtocol: AnyObject {
     func displayQuestion(_ question: Question, current: Int, total: Int)
     func highlightOptionButton(isCorrect: Bool, buttonIndex: Int)
     func resetOptionButtons()
+    func navigateToView()
 }
 
 final class QuizPresenter {
@@ -30,8 +31,12 @@ extension QuizPresenter {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
             self?.currentQuestionIndex += 1
-            self?.view?.resetOptionButtons()
-            self?.showCurrentQuestion()
+            if self?.currentQuestionIndex ?? 0 < questions.count {
+                self?.view?.resetOptionButtons()
+                self?.showCurrentQuestion()
+            } else {
+                self?.view?.navigateToView()
+            }
         }
     }
 }

@@ -21,6 +21,11 @@
 		C5AAAF342C1C92B500003D24 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF332C1C92B500003D24 /* QuizViewController.swift */; };
 		C5AAAF362C1C957500003D24 /* SelectionTestDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF352C1C957500003D24 /* SelectionTestDelegate.swift */; };
 		C5AAAF382C1CA20600003D24 /* QuizEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF372C1CA20600003D24 /* QuizEnums.swift */; };
+		C5AAAF3E2C1CA66000003D24 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF3D2C1CA66000003D24 /* ResultView.swift */; };
+		C5AAAF402C1CB15200003D24 /* ImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF3F2C1CB15200003D24 /* ImageFactory.swift */; };
+		C5AAAF422C1CBD7000003D24 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF412C1CBD7000003D24 /* ResultViewController.swift */; };
+		C5AAAF442C1E0E2100003D24 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF432C1E0E2100003D24 /* ResultPresenter.swift */; };
+		C5AAAF462C1F1C2600003D24 /* ResultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF452C1F1C2600003D24 /* ResultEnum.swift */; };
 		C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */; };
 		C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */; };
 		C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF52C1739E4008A9ABC /* DevCategoryViewController.swift */; };
@@ -53,6 +58,11 @@
 		C5AAAF332C1C92B500003D24 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		C5AAAF352C1C957500003D24 /* SelectionTestDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTestDelegate.swift; sourceTree = "<group>"; };
 		C5AAAF372C1CA20600003D24 /* QuizEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizEnums.swift; sourceTree = "<group>"; };
+		C5AAAF3D2C1CA66000003D24 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		C5AAAF3F2C1CB15200003D24 /* ImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFactory.swift; sourceTree = "<group>"; };
+		C5AAAF412C1CBD7000003D24 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		C5AAAF432C1E0E2100003D24 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
+		C5AAAF452C1F1C2600003D24 /* ResultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEnum.swift; sourceTree = "<group>"; };
 		C5B2EEEE2C1739E4008A9ABC /* DevQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +182,41 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		C5AAAF3A2C1CA62200003D24 /* ResultScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF472C1F1C2C00003D24 /* Enum */,
+				C5AAAF3C2C1CA64200003D24 /* View */,
+				C5AAAF3B2C1CA63C00003D24 /* Presenter */,
+			);
+			path = ResultScreen;
+			sourceTree = "<group>";
+		};
+		C5AAAF3B2C1CA63C00003D24 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF432C1E0E2100003D24 /* ResultPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C5AAAF3C2C1CA64200003D24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF412C1CBD7000003D24 /* ResultViewController.swift */,
+				C5AAAF3D2C1CA66000003D24 /* ResultView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5AAAF472C1F1C2C00003D24 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF452C1F1C2600003D24 /* ResultEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		C5B2EEE52C1739E4008A9ABC = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +241,7 @@
 				C5B2EF0A2C17485C008A9ABC /* DevCategoryScreen */,
 				C5AAAF182C1A1A2D00003D24 /* SelectionTestScreen */,
 				C5AAAF2C2C1B7F2D00003D24 /* QuizScreen */,
+				C5AAAF3A2C1CA62200003D24 /* ResultScreen */,
 				C5B2EF132C174B94008A9ABC /* Factory */,
 				C5B2EF092C174837008A9ABC /* Additional */,
 				C5B2EF022C1739EA008A9ABC /* Info.plist */,
@@ -256,6 +302,7 @@
 				C5B2EF112C174B8E008A9ABC /* LabelFactory.swift */,
 				C5B2EF142C174D67008A9ABC /* BackgroundViewFactory.swift */,
 				C5B2EF162C174F6F008A9ABC /* StackFactory.swift */,
+				C5AAAF3F2C1CB15200003D24 /* ImageFactory.swift */,
 			);
 			path = Factory;
 			sourceTree = "<group>";
@@ -355,12 +402,15 @@
 				C5AAAF222C1A1B7D00003D24 /* SelectionTestCollectionViewCell.swift in Sources */,
 				C5B2EF152C174D67008A9ABC /* BackgroundViewFactory.swift in Sources */,
 				C5B2EF202C1760F1008A9ABC /* DevCategoryDataSource.swift in Sources */,
+				C5AAAF422C1CBD7000003D24 /* ResultViewController.swift in Sources */,
+				C5AAAF3E2C1CA66000003D24 /* ResultView.swift in Sources */,
 				C5AAAF1D2C1A1AD700003D24 /* SelectionTestView.swift in Sources */,
 				C5B2EEFC2C1739E4008A9ABC /* DevQuiz.xcdatamodeld in Sources */,
 				C5AAAF302C1B7F6F00003D24 /* QuizView.swift in Sources */,
 				C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */,
 				C5B2EF1E2C175EF2008A9ABC /* MockDataService.swift in Sources */,
 				C5AAAF162C1A164900003D24 /* DevEnums.swift in Sources */,
+				C5AAAF402C1CB15200003D24 /* ImageFactory.swift in Sources */,
 				C5AAAF1F2C1A1AFA00003D24 /* SelectionViewController.swift in Sources */,
 				C5B2EF222C176357008A9ABC /* DevCategoryPresenter.swift in Sources */,
 				C5B2EF122C174B8E008A9ABC /* LabelFactory.swift in Sources */,
@@ -374,9 +424,11 @@
 				C5AAAF2B2C1B631800003D24 /* DevCategoryCollectionDelegate.swift in Sources */,
 				C5AAAF262C1A1CD400003D24 /* SelectionTestEnums.swift in Sources */,
 				C5B2EF1C2C175D6B008A9ABC /* DevCategoriesResponse.swift in Sources */,
+				C5AAAF442C1E0E2100003D24 /* ResultPresenter.swift in Sources */,
 				C5AAAF142C19FF7600003D24 /* HeaderView.swift in Sources */,
 				C5AAAF322C1C7D6C00003D24 /* QuizPresenter.swift in Sources */,
 				C5AAAF382C1CA20600003D24 /* QuizEnums.swift in Sources */,
+				C5AAAF462C1F1C2600003D24 /* ResultEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

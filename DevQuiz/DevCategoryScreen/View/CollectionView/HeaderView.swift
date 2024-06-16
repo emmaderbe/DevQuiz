@@ -1,7 +1,7 @@
 import UIKit
 
 class HeaderView: UICollectionReusableView {
-    private let categoryLabel = LabelFactory.createSubTitleLabel(aligment: .left)
+    private let categoryLabel = LabelFactory.createBoldOrdinaryLabel(aligment: .left)
 
     override init(frame: CGRect) {
         super.init(frame: frame)

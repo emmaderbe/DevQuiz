@@ -45,5 +45,11 @@ extension QuizViewController: QuizViewProtocol {
     func resetOptionButtons() {
         quizView.resetButtonColors()
     }
+    
+    func navigateToView() {
+            let resultPresenter = ResultPresenter()
+            let resultVC = ResultViewController(presenter: resultPresenter)
+            navigationController?.pushViewController(resultVC, animated: true)
+        }
 }
 
