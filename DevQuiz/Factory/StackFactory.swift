@@ -14,7 +14,7 @@ final class StackFactory {
        let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 1
-        stack.alignment = .leading
+        stack.alignment = .center
         stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -25,6 +25,15 @@ final class StackFactory {
         stack.axis = .horizontal
         stack.spacing = spacing
         stack.distribution = .fill
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }
+    
+    static func createSmallHorizontalStack() -> UIStackView {
+       let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 8
+        stack.distribution = .equalSpacing
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }

@@ -11,8 +11,10 @@ final class TabBarController: UITabBarController {
 private extension TabBarController {
     func generateTabBar() {
         let devPresenter = DevCategoryPresenter()
+        let historyPresenter = HistoryPresenter()
         viewControllers = [
         generateVC(viewController: DevCategoryViewController(presenter: devPresenter), image: "flag.2.crossed.fill"),
+        generateVC(viewController: HistoryViewController(presenter: historyPresenter), image: "clock.fill")
         ]
     }
 }

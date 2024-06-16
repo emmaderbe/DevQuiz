@@ -27,6 +27,11 @@
 		C5AAAF442C1E0E2100003D24 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF432C1E0E2100003D24 /* ResultPresenter.swift */; };
 		C5AAAF462C1F1C2600003D24 /* ResultEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF452C1F1C2600003D24 /* ResultEnum.swift */; };
 		C5AAAF492C1F382500003D24 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF482C1F382500003D24 /* TabBarController.swift */; };
+		C5AAAF4E2C1F637900003D24 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF4D2C1F637900003D24 /* HistoryView.swift */; };
+		C5AAAF512C1F63B700003D24 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF502C1F63B700003D24 /* HistoryCollectionViewCell.swift */; };
+		C5AAAF532C1F81AA00003D24 /* HistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF522C1F81AA00003D24 /* HistoryDataSource.swift */; };
+		C5AAAF552C1F825100003D24 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF542C1F825100003D24 /* HistoryViewController.swift */; };
+		C5AAAF572C1F833D00003D24 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF562C1F833D00003D24 /* HistoryPresenter.swift */; };
 		C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */; };
 		C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */; };
 		C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF52C1739E4008A9ABC /* DevCategoryViewController.swift */; };
@@ -65,6 +70,11 @@
 		C5AAAF432C1E0E2100003D24 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
 		C5AAAF452C1F1C2600003D24 /* ResultEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultEnum.swift; sourceTree = "<group>"; };
 		C5AAAF482C1F382500003D24 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C5AAAF4D2C1F637900003D24 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		C5AAAF502C1F63B700003D24 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		C5AAAF522C1F81AA00003D24 /* HistoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataSource.swift; sourceTree = "<group>"; };
+		C5AAAF542C1F825100003D24 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		C5AAAF562C1F833D00003D24 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
 		C5B2EEEE2C1739E4008A9ABC /* DevQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +229,42 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		C5AAAF4A2C1F3D6300003D24 /* HistoryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF4C2C1F633C00003D24 /* View */,
+				C5AAAF4B2C1F633400003D24 /* Presenter */,
+			);
+			path = HistoryScreen;
+			sourceTree = "<group>";
+		};
+		C5AAAF4B2C1F633400003D24 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF562C1F833D00003D24 /* HistoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C5AAAF4C2C1F633C00003D24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF542C1F825100003D24 /* HistoryViewController.swift */,
+				C5AAAF4D2C1F637900003D24 /* HistoryView.swift */,
+				C5AAAF4F2C1F639400003D24 /* CollectionView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5AAAF4F2C1F639400003D24 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF502C1F63B700003D24 /* HistoryCollectionViewCell.swift */,
+				C5AAAF522C1F81AA00003D24 /* HistoryDataSource.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		C5B2EEE52C1739E4008A9ABC = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +290,7 @@
 				C5AAAF182C1A1A2D00003D24 /* SelectionTestScreen */,
 				C5AAAF2C2C1B7F2D00003D24 /* QuizScreen */,
 				C5AAAF3A2C1CA62200003D24 /* ResultScreen */,
+				C5AAAF4A2C1F3D6300003D24 /* HistoryScreen */,
 				C5B2EF132C174B94008A9ABC /* Factory */,
 				C5B2EF092C174837008A9ABC /* Additional */,
 				C5B2EF022C1739EA008A9ABC /* Info.plist */,
@@ -408,13 +455,17 @@
 				C5AAAF422C1CBD7000003D24 /* ResultViewController.swift in Sources */,
 				C5AAAF3E2C1CA66000003D24 /* ResultView.swift in Sources */,
 				C5AAAF1D2C1A1AD700003D24 /* SelectionTestView.swift in Sources */,
+				C5AAAF552C1F825100003D24 /* HistoryViewController.swift in Sources */,
 				C5B2EEFC2C1739E4008A9ABC /* DevQuiz.xcdatamodeld in Sources */,
 				C5AAAF302C1B7F6F00003D24 /* QuizView.swift in Sources */,
 				C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */,
 				C5B2EF1E2C175EF2008A9ABC /* MockDataService.swift in Sources */,
+				C5AAAF572C1F833D00003D24 /* HistoryPresenter.swift in Sources */,
 				C5AAAF162C1A164900003D24 /* DevEnums.swift in Sources */,
 				C5AAAF402C1CB15200003D24 /* ImageFactory.swift in Sources */,
 				C5AAAF1F2C1A1AFA00003D24 /* SelectionViewController.swift in Sources */,
+				C5AAAF4E2C1F637900003D24 /* HistoryView.swift in Sources */,
+				C5AAAF512C1F63B700003D24 /* HistoryCollectionViewCell.swift in Sources */,
 				C5B2EF222C176357008A9ABC /* DevCategoryPresenter.swift in Sources */,
 				C5B2EF122C174B8E008A9ABC /* LabelFactory.swift in Sources */,
 				C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */,
@@ -425,6 +476,7 @@
 				C5B2EF172C174F6F008A9ABC /* StackFactory.swift in Sources */,
 				C5AAAF292C1B58A900003D24 /* SelectionTestPresenter.swift in Sources */,
 				C5AAAF492C1F382500003D24 /* TabBarController.swift in Sources */,
+				C5AAAF532C1F81AA00003D24 /* HistoryDataSource.swift in Sources */,
 				C5AAAF2B2C1B631800003D24 /* DevCategoryCollectionDelegate.swift in Sources */,
 				C5AAAF262C1A1CD400003D24 /* SelectionTestEnums.swift in Sources */,
 				C5B2EF1C2C175D6B008A9ABC /* DevCategoriesResponse.swift in Sources */,
