@@ -38,6 +38,7 @@
 		C5AAAF632C1F973400003D24 /* StringEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF622C1F973400003D24 /* StringEnum.swift */; };
 		C5AAAF662C2064C200003D24 /* AppearanceModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF652C2064C200003D24 /* AppearanceModeEnum.swift */; };
 		C5AAAF682C20658800003D24 /* AppearanceUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF672C20658800003D24 /* AppearanceUserDefaults.swift */; };
+		C5AAAF6A2C206DAF00003D24 /* SettingsEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF692C206DAF00003D24 /* SettingsEnum.swift */; };
 		C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */; };
 		C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */; };
 		C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF52C1739E4008A9ABC /* DevCategoryViewController.swift */; };
@@ -87,6 +88,7 @@
 		C5AAAF622C1F973400003D24 /* StringEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnum.swift; sourceTree = "<group>"; };
 		C5AAAF652C2064C200003D24 /* AppearanceModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceModeEnum.swift; sourceTree = "<group>"; };
 		C5AAAF672C20658800003D24 /* AppearanceUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceUserDefaults.swift; sourceTree = "<group>"; };
+		C5AAAF692C206DAF00003D24 /* SettingsEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEnum.swift; sourceTree = "<group>"; };
 		C5B2EEEE2C1739E4008A9ABC /* DevQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			children = (
 				C5AAAF652C2064C200003D24 /* AppearanceModeEnum.swift */,
 				C5AAAF672C20658800003D24 /* AppearanceUserDefaults.swift */,
+				C5AAAF692C206DAF00003D24 /* SettingsEnum.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				C5B2EF0E2C174905008A9ABC /* DevCategoryView.swift in Sources */,
 				C5AAAF5E2C1F8BB200003D24 /* SettingsView.swift in Sources */,
 				C5AAAF242C1A1BC000003D24 /* SelectionTestDataSource.swift in Sources */,
+				C5AAAF6A2C206DAF00003D24 /* SettingsEnum.swift in Sources */,
 				C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */,
 				C5B2EF172C174F6F008A9ABC /* StackFactory.swift in Sources */,
 				C5AAAF292C1B58A900003D24 /* SelectionTestPresenter.swift in Sources */,

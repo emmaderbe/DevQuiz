@@ -32,7 +32,7 @@ private extension SettingsViewController {
     }
     
     func setupTitle() {
-        settingsView.setupTitle(with: "Выбери свою сторону:")
+        settingsView.setupTitle(with: SettingsEnum.StringEnum.title)
     }
     
     func setupSegmentControlAction() {
