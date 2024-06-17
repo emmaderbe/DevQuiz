@@ -4,6 +4,8 @@ class QuizView: UIView {
     private let progressLabel = LabelFactory.createOrdinaryLabel()
     private let progressBar: UIProgressView = {
         let progressView = UIProgressView(progressViewStyle: .default)
+        progressView.progressTintColor = UIColor(named: StringEnum.accentColor)
+        progressView.trackTintColor = .systemGray4
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
     }()
@@ -26,7 +28,7 @@ class QuizView: UIView {
 
 private extension QuizView {
     func setupView() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: StringEnum.backgroundColor)
         addSubview(progressLabel)
         addSubview(progressBar)
         addSubview(questionLabel)
@@ -57,8 +59,8 @@ private extension QuizView {
         button.setTitle(title, for: .normal)
         button.addTarget(target, action: action, for: .touchUpInside)
         button.layer.cornerRadius = QuizEnums.QuizView.cornerRadius
-        button.backgroundColor = .systemGray5
-        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = UIColor(named: StringEnum.customBackgroundColor)
+        button.setTitleColor(UIColor(named: StringEnum.textColor), for: .normal)
         return button
     }
     

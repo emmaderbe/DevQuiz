@@ -5,7 +5,7 @@ final class LabelFactory {
         let label = UILabel()
         label.font = .systemFont(ofSize: 24, weight: .semibold)
         label.textAlignment = .left
-        label.textColor = .black
+        label.textColor = UIColor(named: StringEnum.textColor)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -25,7 +25,7 @@ final class LabelFactory {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.textAlignment = aligment
-        label.textColor = .black
+        label.textColor = UIColor(named: StringEnum.textColor)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -35,7 +35,7 @@ final class LabelFactory {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .regular)
         label.textAlignment = .left
-        label.textColor = .black
+        label.textColor = UIColor(named: StringEnum.textColor)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -45,7 +45,7 @@ final class LabelFactory {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .medium)
         label.textAlignment = aligment
-        label.textColor = .black
+        label.textColor = UIColor(named: StringEnum.textColor)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -55,7 +55,7 @@ final class LabelFactory {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .regular)
         label.textAlignment = .left
-        label.textColor = .black
+        label.textColor = UIColor(named: StringEnum.textColor)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

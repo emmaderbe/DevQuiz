@@ -28,7 +28,7 @@ class DevCategoryView: UIView {
 //MARK: - setup UI
 private extension DevCategoryView {
     func setupView() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: StringEnum.backgroundColor)
         addSubview(titleLabel)
         addSubview(collectionView)
     }

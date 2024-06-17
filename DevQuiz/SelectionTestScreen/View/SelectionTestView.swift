@@ -25,7 +25,7 @@ class SelectionTestView: UIView {
 //MARK: - setup UI
 private extension SelectionTestView {
     func setupView() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: StringEnum.backgroundColor)
         addSubview(collectionView)
     }
     

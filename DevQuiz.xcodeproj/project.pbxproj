@@ -32,6 +32,12 @@
 		C5AAAF532C1F81AA00003D24 /* HistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF522C1F81AA00003D24 /* HistoryDataSource.swift */; };
 		C5AAAF552C1F825100003D24 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF542C1F825100003D24 /* HistoryViewController.swift */; };
 		C5AAAF572C1F833D00003D24 /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF562C1F833D00003D24 /* HistoryPresenter.swift */; };
+		C5AAAF5C2C1F8B6700003D24 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF5B2C1F8B6700003D24 /* SettingsPresenter.swift */; };
+		C5AAAF5E2C1F8BB200003D24 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF5D2C1F8BB200003D24 /* SettingsView.swift */; };
+		C5AAAF602C1F944500003D24 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF5F2C1F944500003D24 /* SettingsViewController.swift */; };
+		C5AAAF632C1F973400003D24 /* StringEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF622C1F973400003D24 /* StringEnum.swift */; };
+		C5AAAF662C2064C200003D24 /* AppearanceModeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF652C2064C200003D24 /* AppearanceModeEnum.swift */; };
+		C5AAAF682C20658800003D24 /* AppearanceUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AAAF672C20658800003D24 /* AppearanceUserDefaults.swift */; };
 		C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */; };
 		C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */; };
 		C5B2EEF62C1739E4008A9ABC /* DevCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2EEF52C1739E4008A9ABC /* DevCategoryViewController.swift */; };
@@ -75,6 +81,12 @@
 		C5AAAF522C1F81AA00003D24 /* HistoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDataSource.swift; sourceTree = "<group>"; };
 		C5AAAF542C1F825100003D24 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		C5AAAF562C1F833D00003D24 /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		C5AAAF5B2C1F8B6700003D24 /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		C5AAAF5D2C1F8BB200003D24 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C5AAAF5F2C1F944500003D24 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C5AAAF622C1F973400003D24 /* StringEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEnum.swift; sourceTree = "<group>"; };
+		C5AAAF652C2064C200003D24 /* AppearanceModeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceModeEnum.swift; sourceTree = "<group>"; };
+		C5AAAF672C20658800003D24 /* AppearanceUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceUserDefaults.swift; sourceTree = "<group>"; };
 		C5B2EEEE2C1739E4008A9ABC /* DevQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5B2EEF12C1739E4008A9ABC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5B2EEF32C1739E4008A9ABC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -265,6 +277,50 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		C5AAAF582C1F8B2B00003D24 /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF642C20649E00003D24 /* Enum */,
+				C5AAAF5A2C1F8B4F00003D24 /* View */,
+				C5AAAF592C1F8B4500003D24 /* Presenter */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		C5AAAF592C1F8B4500003D24 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF5B2C1F8B6700003D24 /* SettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C5AAAF5A2C1F8B4F00003D24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF5F2C1F944500003D24 /* SettingsViewController.swift */,
+				C5AAAF5D2C1F8BB200003D24 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5AAAF612C1F971400003D24 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF622C1F973400003D24 /* StringEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		C5AAAF642C20649E00003D24 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAAF652C2064C200003D24 /* AppearanceModeEnum.swift */,
+				C5AAAF672C20658800003D24 /* AppearanceUserDefaults.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		C5B2EEE52C1739E4008A9ABC = {
 			isa = PBXGroup;
 			children = (
@@ -285,12 +341,14 @@
 			isa = PBXGroup;
 			children = (
 				C5B2EF082C17482B008A9ABC /* Application */,
+				C5AAAF612C1F971400003D24 /* Enum */,
 				C5B2EF1A2C175D49008A9ABC /* Model */,
 				C5B2EF0A2C17485C008A9ABC /* DevCategoryScreen */,
 				C5AAAF182C1A1A2D00003D24 /* SelectionTestScreen */,
 				C5AAAF2C2C1B7F2D00003D24 /* QuizScreen */,
 				C5AAAF3A2C1CA62200003D24 /* ResultScreen */,
 				C5AAAF4A2C1F3D6300003D24 /* HistoryScreen */,
+				C5AAAF582C1F8B2B00003D24 /* SettingsScreen */,
 				C5B2EF132C174B94008A9ABC /* Factory */,
 				C5B2EF092C174837008A9ABC /* Additional */,
 				C5B2EF022C1739EA008A9ABC /* Info.plist */,
@@ -448,12 +506,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5B2EF102C174A2F008A9ABC /* DevCategoryCollectionViewCell.swift in Sources */,
+				C5AAAF632C1F973400003D24 /* StringEnum.swift in Sources */,
 				C5AAAF342C1C92B500003D24 /* QuizViewController.swift in Sources */,
 				C5AAAF222C1A1B7D00003D24 /* SelectionTestCollectionViewCell.swift in Sources */,
 				C5B2EF152C174D67008A9ABC /* BackgroundViewFactory.swift in Sources */,
 				C5B2EF202C1760F1008A9ABC /* DevCategoryDataSource.swift in Sources */,
 				C5AAAF422C1CBD7000003D24 /* ResultViewController.swift in Sources */,
 				C5AAAF3E2C1CA66000003D24 /* ResultView.swift in Sources */,
+				C5AAAF602C1F944500003D24 /* SettingsViewController.swift in Sources */,
 				C5AAAF1D2C1A1AD700003D24 /* SelectionTestView.swift in Sources */,
 				C5AAAF552C1F825100003D24 /* HistoryViewController.swift in Sources */,
 				C5B2EEFC2C1739E4008A9ABC /* DevQuiz.xcdatamodeld in Sources */,
@@ -466,11 +526,14 @@
 				C5AAAF1F2C1A1AFA00003D24 /* SelectionViewController.swift in Sources */,
 				C5AAAF4E2C1F637900003D24 /* HistoryView.swift in Sources */,
 				C5AAAF512C1F63B700003D24 /* HistoryCollectionViewCell.swift in Sources */,
+				C5AAAF662C2064C200003D24 /* AppearanceModeEnum.swift in Sources */,
 				C5B2EF222C176357008A9ABC /* DevCategoryPresenter.swift in Sources */,
+				C5AAAF5C2C1F8B6700003D24 /* SettingsPresenter.swift in Sources */,
 				C5B2EF122C174B8E008A9ABC /* LabelFactory.swift in Sources */,
 				C5B2EEF22C1739E4008A9ABC /* AppDelegate.swift in Sources */,
 				C5AAAF362C1C957500003D24 /* SelectionTestDelegate.swift in Sources */,
 				C5B2EF0E2C174905008A9ABC /* DevCategoryView.swift in Sources */,
+				C5AAAF5E2C1F8BB200003D24 /* SettingsView.swift in Sources */,
 				C5AAAF242C1A1BC000003D24 /* SelectionTestDataSource.swift in Sources */,
 				C5B2EEF42C1739E4008A9ABC /* SceneDelegate.swift in Sources */,
 				C5B2EF172C174F6F008A9ABC /* StackFactory.swift in Sources */,
@@ -484,6 +547,7 @@
 				C5AAAF142C19FF7600003D24 /* HeaderView.swift in Sources */,
 				C5AAAF322C1C7D6C00003D24 /* QuizPresenter.swift in Sources */,
 				C5AAAF382C1CA20600003D24 /* QuizEnums.swift in Sources */,
+				C5AAAF682C20658800003D24 /* AppearanceUserDefaults.swift in Sources */,
 				C5AAAF462C1F1C2600003D24 /* ResultEnum.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
