@@ -12,9 +12,11 @@ private extension TabBarController {
     func generateTabBar() {
         let devPresenter = DevCategoryPresenter()
         let historyPresenter = HistoryPresenter()
+        let settingsPresenter = SettingsPresenter()
         viewControllers = [
         generateVC(viewController: DevCategoryViewController(presenter: devPresenter), image: "flag.2.crossed.fill"),
-        generateVC(viewController: HistoryViewController(presenter: historyPresenter), image: "clock.fill")
+        generateVC(viewController: HistoryViewController(presenter: historyPresenter), image: "clock.fill"),
+        generateVC(viewController: SettingsViewController(presenter: settingsPresenter), image: "gearshape.fill")
         ]
     }
 }
@@ -33,7 +35,7 @@ private extension TabBarController {
 private extension TabBarController {
     private func setTabBarAppearance() {
         tabBar.backgroundColor = .clear
-        tabBar.tintColor = .systemBlue
+        tabBar.tintColor = UIColor(named: StringEnum.accentColor) 
         tabBar.unselectedItemTintColor = .systemGray
 
         tabBar.itemPositioning = .centered

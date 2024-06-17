@@ -25,7 +25,7 @@ class HistoryView: UIView {
 //MARK: - setup UI
 private extension HistoryView {
     func setupView() {
-        backgroundColor = .white
+        backgroundColor = UIColor(named: StringEnum.backgroundColor)
         addSubview(collectionView)
     }
     

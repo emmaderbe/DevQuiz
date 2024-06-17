@@ -11,6 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = TabBarController()
         window.makeKeyAndVisible()
         self.window = window
+        
+        window.overrideUserInterfaceStyle = AppearanceUserDefaults.shared.appearance.gerUserInterfaceStyle()
     }
     
     func sceneDidEnterBackground(_ scene: UIScene) {
