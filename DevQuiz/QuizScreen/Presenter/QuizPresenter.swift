@@ -1,7 +1,7 @@
 import Foundation
 
 protocol QuizViewProtocol: AnyObject {
-    func displayQuestion(_ question: Question, current: Int, total: Int)
+    func displayQuestion(_ question: QuizQuestion, current: Int, total: Int)
     func highlightOptionButton(isCorrect: Bool, buttonIndex: Int)
     func resetOptionButtons()
     func navigateToView()
@@ -9,7 +9,7 @@ protocol QuizViewProtocol: AnyObject {
 
 final class QuizPresenter {
     weak var view: QuizViewProtocol?
-    private var questions: [Question]?
+    private var questions: [QuizQuestion]?
     private var currentQuestionIndex = 0
 }
 
@@ -19,7 +19,7 @@ extension QuizPresenter {
         showCurrentQuestion()
     }
     
-    func setSelectedQuiz(_ questions: [Question]) {
+    func setSelectedQuiz(_ questions: [QuizQuestion]) {
         self.questions = questions
     }
     

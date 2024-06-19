@@ -12,10 +12,10 @@ enum DevEnums {
     }
     
     enum CellConstr {
-        static let top: CGFloat = 16
+        static let top: CGFloat = 8
         static let leading: CGFloat = 16
         static let trailing: CGFloat = -16
-        static let spacing: CGFloat = 8
+        static let spacing: CGFloat = 2
     }
     
     enum HeaderConstr {

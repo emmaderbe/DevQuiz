@@ -43,7 +43,7 @@ private extension SelectionTestCollectionViewCell {
 
 //MARK: - configure cell
 extension SelectionTestCollectionViewCell {
-    func configure(with data: Topic) {
+    func configure(with data: QuizTopic) {
         testThemeLabel.text = data.name
         testCountLabel.text = String("\(data.questions.count) шт.")
     }
