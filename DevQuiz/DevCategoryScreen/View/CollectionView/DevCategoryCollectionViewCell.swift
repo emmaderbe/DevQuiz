@@ -4,6 +4,7 @@ final class DevCategoryCollectionViewCell: UICollectionViewCell {
     private let customBackgroundView = BackgroundViewFactory.createBackroundView()
     private let devNameLabel = LabelFactory.createBoldSmallOrdinaryLabel(aligment: .left)
     private let descriptionLabel = LabelFactory.createSmallOrdinaryLabel()
+    private let verticalStack = StackFactory.createSmallVerticalStack()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

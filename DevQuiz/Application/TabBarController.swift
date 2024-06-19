@@ -27,7 +27,8 @@ private extension TabBarController {
         viewController.tabBarItem.image = UIImage(systemName: image)
         
         let navigationViewController = UINavigationController(rootViewController: viewController)
-        navigationViewController.navigationBar.tintColor = .systemBlue
+        navigationViewController.navigationBar.tintColor = UIColor(named: StringEnum.accentColor)
+        navigationViewController.navigationBar.topItem?.title = ""
         return navigationViewController
     }
 }

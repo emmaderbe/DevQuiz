@@ -32,7 +32,7 @@ private extension QuizViewController {
 }
 
 extension QuizViewController: QuizViewProtocol {
-    func displayQuestion(_ question: Question, current: Int, total: Int) {
+    func displayQuestion(_ question: QuizQuestion, current: Int, total: Int) {
         quizView.updateProgress(current: current, total: total)
         quizView.updateQuestion(question.text)
         quizView.updateOptions(question.options, target: self, action: #selector(optionButtonTapped(_:)))
