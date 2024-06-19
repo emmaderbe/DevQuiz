@@ -60,6 +60,9 @@ private extension QuizView {
         button.addTarget(target, action: action, for: .touchUpInside)
         button.layer.cornerRadius = QuizEnums.QuizView.cornerRadius
         button.backgroundColor = UIColor(named: StringEnum.customBackgroundColor)
+        button.titleLabel?.numberOfLines = 0
+        button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        button.titleLabel?.textAlignment = .center
         button.setTitleColor(UIColor(named: StringEnum.textColor), for: .normal)
         return button
     }
@@ -76,7 +79,8 @@ private extension QuizView {
             NSLayoutConstraint.activate([
                 button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: QuizEnums.QuizView.leading),
                 button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: QuizEnums.QuizView.trailing),
-                button.heightAnchor.constraint(equalToConstant: QuizEnums.QuizView.buttonHeight)
+                button.heightAnchor.constraint(equalToConstant: button.intrinsicContentSize.height + 16),
+                
             ])
             
             if let previousButton = previousButton {

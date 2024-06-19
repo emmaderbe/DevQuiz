@@ -53,19 +53,15 @@ private extension NetworkService {
         return URLRequest(url: url)
     }
     
-    func makeTopicsRequest(for language: String) -> URLRequest? {
-        var urlComponents = URLComponents(string: "https://ios.quiz.jampad.cc/api/v1/quiz/topics")
-        let queryItems = [
-            URLQueryItem(name: "language", value: language)
-        ]
-        urlComponents?.queryItems = queryItems
-        
-        guard let url = urlComponents?.url else {
+    private func makeTopicsRequest(for language: String) -> URLRequest? {
+        let urlString = "https://ios.quiz.jampad.cc/api/v1/quiz/topics/\(language.lowercased())"
+        guard let url = URL(string: urlString) else {
             return nil
         }
-        
+        print("Request URL: \(url.absoluteString)")
         return URLRequest(url: url)
     }
+
     
     func handleResponse<T: Decodable>(data: Data?, response: URLResponse?, error: Error?, completion: @escaping (Result<T, Error>) -> Void) {
         guard let httpResponse = response as? HTTPURLResponse else {
