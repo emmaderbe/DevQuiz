@@ -58,10 +58,10 @@ private extension QuizView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(title, for: .normal)
         button.addTarget(target, action: action, for: .touchUpInside)
-        button.layer.cornerRadius = QuizEnums.QuizView.cornerRadius
+        button.layer.cornerRadius = QuizEnums.QuizButton.cornerRadius
         button.backgroundColor = UIColor(named: StringEnum.customBackgroundColor)
         button.titleLabel?.numberOfLines = 0
-        button.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        button.contentEdgeInsets = UIEdgeInsets(top: QuizEnums.QuizButton.top, left: QuizEnums.QuizButton.leading, bottom: QuizEnums.QuizButton.bottom, right: QuizEnums.QuizButton.trailing)
         button.titleLabel?.textAlignment = .center
         button.setTitleColor(UIColor(named: StringEnum.textColor), for: .normal)
         return button
@@ -79,7 +79,7 @@ private extension QuizView {
             NSLayoutConstraint.activate([
                 button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: QuizEnums.QuizView.leading),
                 button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: QuizEnums.QuizView.trailing),
-                button.heightAnchor.constraint(equalToConstant: button.intrinsicContentSize.height + 16),
+                button.heightAnchor.constraint(equalToConstant: button.intrinsicContentSize.height + QuizEnums.QuizButton.height),
                 
             ])
             

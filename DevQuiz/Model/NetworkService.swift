@@ -58,7 +58,6 @@ private extension NetworkService {
         guard let url = URL(string: urlString) else {
             return nil
         }
-        print("Request URL: \(url.absoluteString)")
         return URLRequest(url: url)
     }
 
