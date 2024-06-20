@@ -1,13 +1,12 @@
 import Foundation
 
 protocol TopicDataManagerProtocol {
-    func getTopics(for language: Language, completion: @escaping (Result<[QuizTopic], Error>) -> Void)
-    func getQuestions(for topic: QuizTopic) -> [QuizQuestion]
+    func getTopics(for language: LanguageDTO, completion: @escaping (Result<[TopicDTO], Error>) -> Void)
 }
 
 class TopicDataManager: TopicDataManagerProtocol {
     private let networkService: NetworkServiceProtocol
-    private var topics: [QuizTopic]?
+    private var topics: [TopicDTO]?
 
     init(networkService: NetworkServiceProtocol = NetworkService()) {
         self.networkService = networkService
@@ -15,13 +14,13 @@ class TopicDataManager: TopicDataManagerProtocol {
 }
 
 extension TopicDataManager {
-    func getTopics(for language: Language, completion: @escaping (Result<[QuizTopic], Error>) -> Void) {
+    func getTopics(for language: LanguageDTO, completion: @escaping (Result<[TopicDTO], Error>) -> Void) {
         networkService.fetchTopics(for: language.name) { result in
             switch result {
             case .success(let topicResponse):
                 let quizTopics = topicResponse.result.map { topic in
-                    QuizTopic(name: topic.name, description: topic.description, icon: topic.icon, questions: topic.questions.map { question in
-                        QuizQuestion(text: question.text, options: question.options, correctAnswer: question.correctAnswer)
+                    TopicDTO(name: topic.name, description: topic.description, icon: topic.icon, questions: topic.questions.map { question in
+                        QuestionDTO(text: question.text, options: question.options, correctAnswer: question.correctAnswer)
                     })
                 }
                 self.topics = quizTopics
@@ -30,9 +29,5 @@ extension TopicDataManager {
                 completion(.failure(error))
             }
         }
-    }
-
-    func getQuestions(for topic: QuizTopic) -> [QuizQuestion] {
-        return topic.questions
     }
 }

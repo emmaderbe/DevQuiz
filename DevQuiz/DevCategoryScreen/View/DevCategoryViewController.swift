@@ -49,7 +49,7 @@ private extension DevCategoryViewController {
 }
 
 extension DevCategoryViewController: CategorySelectionDelegateProtocol {
-    func languageSelected(_ language: ProgrammingLanguage) {
+    func languageSelected(_ language: LanguageDTO) {
         presenter.languageSelected(language)
     }
 }
@@ -64,7 +64,7 @@ extension DevCategoryViewController: DevCategoryProtocol {
         }
     }
     
-    func navigateToView(with language: ProgrammingLanguage) {
+    func navigateToView(with language: LanguageDTO) {
         let presenter = SelectionTestPresenter()
         presenter.setSelectedLanguage(language)
         let viewController = SelectionTestViewController(presenter: presenter)

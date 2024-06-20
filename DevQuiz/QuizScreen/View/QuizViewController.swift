@@ -32,7 +32,7 @@ private extension QuizViewController {
 }
 
 extension QuizViewController: QuizViewProtocol {
-    func displayQuestion(_ question: QuizQuestion, current: Int, total: Int) {
+    func displayQuestion(_ question: QuestionDTO, current: Int, total: Int) {
         quizView.updateProgress(current: current, total: total)
         quizView.updateQuestion(question.text)
         quizView.updateOptions(question.options, target: self, action: #selector(optionButtonTapped(_:)))
@@ -46,10 +46,12 @@ extension QuizViewController: QuizViewProtocol {
         quizView.resetButtonColors()
     }
     
-    func navigateToView() {
-            let resultPresenter = ResultPresenter()
-            let resultVC = ResultViewController(presenter: resultPresenter)
-            navigationController?.pushViewController(resultVC, animated: true)
-        }
+    func navigateToResultView(result: String, category: String, technology: String) {
+        let resultPresenter = ResultPresenter()
+        resultPresenter.setQuizResult(result: result, category: category, technology: technology)
+        let resultVC = ResultViewController(presenter: resultPresenter)
+        navigationController?.pushViewController(resultVC, animated: true)
+    }
+    
 }
 

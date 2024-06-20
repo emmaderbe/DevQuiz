@@ -1,13 +1,13 @@
 import Foundation
 
-struct QuizTopic {
+struct TopicDTO {
     let name: String
     let description: String
     let icon: String
-    let questions: [QuizQuestion]
+    let questions: [QuestionDTO]
 }
 
-struct QuizQuestion {
+struct QuestionDTO {
     let text: String
     let options: [String]
     let correctAnswer: String

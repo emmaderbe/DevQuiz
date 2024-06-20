@@ -58,6 +58,10 @@ private extension ResultViewController {
 }
 
 extension ResultViewController: ResultViewProtocol {
+    func setupResultText(result: String, category: String, technology: String) {
+        resultView.setupResultText(result: result, category: category, technology: technology)
+    }
+    
     func navigateToView() {
         navigationController?.popToRootViewController(animated: true)
     }

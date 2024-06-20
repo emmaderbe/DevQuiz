@@ -1,14 +1,15 @@
 import Foundation
 
 protocol SelectionTestProtocol: AnyObject {
-    func displayTopics(topics: [QuizTopic])
-    func navigateToView(with questions: [QuizQuestion])
+    func displayTopics(topics: [TopicDTO])
+    func navigateToView(with questions: [QuestionDTO], language: LanguageDTO, topic: TopicDTO)
 }
 
 final class SelectionTestPresenter {
     weak var view: SelectionTestProtocol?
     private let topicDataManager: TopicDataManagerProtocol
-    private var selectedLanguage: ProgrammingLanguage?
+    private var selectedLanguage: LanguageDTO?
+    private var selectedTopic: TopicDTO?
     
     init(topicDataManager: TopicDataManagerProtocol = TopicDataManager()) {
         self.topicDataManager = topicDataManager
@@ -16,8 +17,12 @@ final class SelectionTestPresenter {
 }
 
 extension SelectionTestPresenter {
-    func setSelectedLanguage(_ language: ProgrammingLanguage) {
+    func setSelectedLanguage(_ language: LanguageDTO) {
         self.selectedLanguage = language
+    }
+    
+    func setSelectedTopic(_ topic: TopicDTO) {
+        self.selectedTopic = topic
     }
     
     func viewDidLoad(view: SelectionTestProtocol) {
@@ -27,15 +32,15 @@ extension SelectionTestPresenter {
 }
 
 extension SelectionTestPresenter {
-    func topicSelected(_ questions: [QuizQuestion]) {
-        view?.navigateToView(with: questions)
+    func topicSelected(_ questions: [QuestionDTO]) {
+        view?.navigateToView(with: questions, language: selectedLanguage!, topic: selectedTopic!)
     }
 }
 
 private extension SelectionTestPresenter {
     func fetchTopics() {
         guard let selectedLanguage = selectedLanguage else { return }
-        let language = Language(name: selectedLanguage.name, description: selectedLanguage.description, icon: selectedLanguage.icon)
+        let language = LanguageDTO(name: selectedLanguage.name, description: selectedLanguage.description, icon: selectedLanguage.icon)
         topicDataManager.getTopics(for: language) { [weak self] result in
             switch result {
             case .success(let topics):

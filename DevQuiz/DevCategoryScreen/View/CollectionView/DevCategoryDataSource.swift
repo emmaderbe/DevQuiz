@@ -2,11 +2,11 @@ import UIKit
 
 //MARK: - Property
 final class DevCategoryCollectionDataSource: NSObject, UICollectionViewDataSource {
-    private var categories: [Category] = []
+    private var categories: [LanguageCategoryDTO] = []
 }
 
 extension DevCategoryCollectionDataSource {
-    func updateCategories(_ categories: [Category]) {
+    func updateCategories(_ categories: [LanguageCategoryDTO]) {
         self.categories = categories
     }
 }

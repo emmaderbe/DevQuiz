@@ -1,8 +1,7 @@
 import Foundation
 
 protocol CategoryDataManagerProtocol {
-    func getCategories(completion: @escaping (Result<[Category], Error>) -> Void)
-    func getLanguages(for category: Category) -> [Language]
+    func getCategories(completion: @escaping (Result<[LanguageCategoryDTO], Error>) -> Void)
 }
 
 class CategoryDataManager: CategoryDataManagerProtocol {
@@ -15,19 +14,20 @@ class CategoryDataManager: CategoryDataManagerProtocol {
 }
 
 extension CategoryDataManager {
-    func getCategories(completion: @escaping (Result<[Category], Error>) -> Void) {
+    func getCategories(completion: @escaping (Result<[LanguageCategoryDTO], Error>) -> Void) {
         networkService.fetchCategories { [weak self] result in
             switch result {
             case .success(let categoryResponse):
-                self?.categories = categoryResponse.result
-                completion(.success(categoryResponse.result))
+                let languageCategories = categoryResponse.result.map { category in
+                    LanguageCategoryDTO(title: category.title,
+                                     languages: category.languages.map { LanguageDTO(name: $0.name,
+                                                                                  description: $0.description,
+                                                                                  icon: $0.icon) })
+                }
+                completion(.success(languageCategories))
             case .failure(let error):
                 completion(.failure(error))
             }
         }
-    }
-    
-    func getLanguages(for category: Category) -> [Language] {
-        return category.languages.map { Language(name: $0.name, description: $0.description, icon: $0.icon) }
     }
 }

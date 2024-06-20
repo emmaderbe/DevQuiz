@@ -2,14 +2,14 @@ import Foundation
 
 protocol DevCategoryProtocol: AnyObject {
     func displayCategories()
-    func navigateToView(with language: ProgrammingLanguage)
+    func navigateToView(with language: LanguageDTO)
 }
 
 final class DevCategoryPresenter {
     weak var view: DevCategoryProtocol?
     private let categoryDataManager: CategoryDataManagerProtocol
     
-    var categories: [Category] = []
+    var categories: [LanguageCategoryDTO] = []
     
     init(categoryDataManager: CategoryDataManagerProtocol = CategoryDataManager()) {
         self.categoryDataManager = categoryDataManager
@@ -22,7 +22,7 @@ extension DevCategoryPresenter {
         fetchCategories()
     }
     
-    func languageSelected(_ language: ProgrammingLanguage) {
+    func languageSelected(_ language: LanguageDTO) {
         view?.navigateToView(with: language)
     }
 }
