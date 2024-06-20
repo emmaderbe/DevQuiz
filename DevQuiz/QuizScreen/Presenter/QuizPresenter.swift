@@ -13,12 +13,12 @@ final class QuizPresenter {
     private var questions: [QuestionDTO]?
     private var currentQuestionIndex = 0
     private var correctAnswersCount = 0
-    private let quizResultDataManager: QuizDataManagerProtocol
+    private let coreDataManager: CoreDataManagerProtocol
     private var selectedTopic: TopicDTO
     private var selectedLanguage: LanguageDTO
     
-    init(quizResultDataManager: QuizDataManagerProtocol = QuizDataManager(), topic: TopicDTO, language: LanguageDTO) {
-        self.quizResultDataManager = quizResultDataManager
+    init(coreDataManager: CoreDataManagerProtocol = CoreDataManager(), topic: TopicDTO, language: LanguageDTO) {
+        self.coreDataManager = coreDataManager
         self.selectedTopic = topic
         self.selectedLanguage = language
     }
@@ -68,7 +68,7 @@ private extension QuizPresenter {
     }
     
     func saveQuizResult() {
-        quizResultDataManager.saveQuizResult(topic: selectedTopic,
+        coreDataManager.saveQuizResult(topic: selectedTopic,
                                              language: selectedLanguage,
                                              correctAnswers: Int32(correctAnswersCount),
                                              totalQuestions: Int32(questions?.count ?? 0))

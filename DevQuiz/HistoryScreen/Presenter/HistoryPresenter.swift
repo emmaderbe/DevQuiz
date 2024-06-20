@@ -7,19 +7,28 @@ protocol HistoryPresenterProtocol: AnyObject {
 
 final class HistoryPresenter {
     weak var view: HistoryPresenterProtocol?
-    private let historyDataManager: HistoryDataManagerProtocol
+    private let coreDataManager: CoreDataManagerProtocol
     
-    init(historyDataManager: HistoryDataManagerProtocol = HistoryDataManager()) {
-        self.historyDataManager = historyDataManager
+    init(coreDataManager: CoreDataManagerProtocol = CoreDataManager()) {
+        self.coreDataManager = coreDataManager
+        NotificationCenter.default.addObserver(self, selector: #selector(dataDidChange), name: .dataDidChange, object: nil)
+    }
+}
+
+private extension HistoryPresenter {
+    func fetchResults() {
+        let results = coreDataManager.fetchQuizResults()
+        view?.displayResults(results)
     }
     
+    @objc func dataDidChange() {
+        fetchResults()
+    }
+}
+
+extension HistoryPresenter {
     func viewDidLoad(view: HistoryPresenterProtocol) {
         self.view = view
         fetchResults()
-    }
-    
-    private func fetchResults() {
-        let results = historyDataManager.fetchQuizResults()
-        view?.displayResults(results)
     }
 }
