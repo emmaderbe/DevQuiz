@@ -14,7 +14,7 @@ final class StackFactory {
        let stack = UIStackView()
         stack.axis = .vertical
         stack.spacing = 1
-        stack.alignment = .center
+        stack.alignment = .leading
         stack.distribution = .fill
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack

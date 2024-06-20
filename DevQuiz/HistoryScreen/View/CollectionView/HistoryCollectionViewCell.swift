@@ -74,10 +74,10 @@ extension HistoryCollectionViewCell {
         resultTitleLabel.text = result
     }
     
-    func configure(with data: String) {
-        languageLabel.text = data
-        themeLabel.text = data
-        resultLabel.text = data
+    func configure(with data: QuizResult) {
+        languageLabel.text = data.language
+        themeLabel.text = data.topic
+        resultLabel.text = "\(data.correctAnswers)/\(data.totalQuestions)"
     }
 }
 
