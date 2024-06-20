@@ -74,7 +74,11 @@ private extension ResultPresenter {
         default:
             title = ResultEnum.ResultString.highResultTitle
             description = ResultEnum.ResultString.highResultDescription
-            image = ResultEnum.ResultImage.highResultTitleImage
+            if #available(iOS 17, *) {
+                image = ResultEnum.ResultImage.highResultTitleImage
+            } else {
+                image = ResultEnum.ResultImage.highResultTitleImageOldVersion
+            }
         }
         
         view?.setupTitleAndImage(title: title, description: description, image: image)

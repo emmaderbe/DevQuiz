@@ -39,5 +39,6 @@ enum ResultEnum {
         static let lowResultTitleImage = "hand.thumbsdown.fill"
         static let mediumResultTitleImage = "hand.thumbsup.fill"
         static let highResultTitleImage = "hands.and.sparkles.fill"
+        static let highResultTitleImageOldVersion = "hands.clap.fill"
     }
 }
