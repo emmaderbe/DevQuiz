@@ -12,9 +12,16 @@ final class HistoryCollectionViewCell: UICollectionViewCell {
     private let resultTitleLabel = LabelFactory.createBoldSmallOrdinaryLabel(aligment: .left)
     private let resultLabel = LabelFactory.createSmallOrdinaryLabel()
     
+    private let dateTitleLabel = LabelFactory.createBoldSmallOrdinaryLabel(aligment: .left)
+    private let dateLabel = LabelFactory.createSmallOrdinaryLabel()
+    
     private let languageVerticStack = StackFactory.createSmallVerticalStack()
     private let themeVerticStack = StackFactory.createSmallVerticalStack()
     private let resultVerticStack = StackFactory.createSmallVerticalStack()
+    private let dateVerticStack = StackFactory.createSmallVerticalStack()
+    
+    private let firstVerticalStack = StackFactory.createVerticalStack(with: 4)
+    private let secondVerticalStack = StackFactory.createVerticalStack(with: 4)
     
     private let horizStack = StackFactory.createSmallHorizontalStack()
     
@@ -37,9 +44,13 @@ private extension HistoryCollectionViewCell {
         
         customBackgroundView.addSubview(horizStack)
         
-        horizStack.addArrangedSubview(languageVerticStack)
-        horizStack.addArrangedSubview(themeVerticStack)
-        horizStack.addArrangedSubview(resultVerticStack)
+        horizStack.addArrangedSubview(firstVerticalStack)
+        horizStack.addArrangedSubview(secondVerticalStack)
+
+        firstVerticalStack.addArrangedSubview(languageVerticStack)
+        firstVerticalStack.addArrangedSubview(themeVerticStack)
+        secondVerticalStack.addArrangedSubview(resultVerticStack)
+        secondVerticalStack.addArrangedSubview(dateVerticStack)
         
         languageVerticStack.addArrangedSubview(languageTitleLabel)
         languageVerticStack.addArrangedSubview(languageLabel)
@@ -49,6 +60,9 @@ private extension HistoryCollectionViewCell {
         
         resultVerticStack.addArrangedSubview(resultTitleLabel)
         resultVerticStack.addArrangedSubview(resultLabel)
+        
+        dateVerticStack.addArrangedSubview(dateTitleLabel)
+        dateVerticStack.addArrangedSubview(dateLabel)
     }
     
     func setupConstraints() {
@@ -58,26 +72,28 @@ private extension HistoryCollectionViewCell {
             customBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             customBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            horizStack.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: 16),
-            horizStack.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: 16),
-            horizStack.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: -16),
-            horizStack.bottomAnchor.constraint(equalTo: customBackgroundView.bottomAnchor, constant: -16),
+            horizStack.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: HistoryEnum.HistoryCell.top),
+            horizStack.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: HistoryEnum.HistoryCell.leading),
+            horizStack.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: HistoryEnum.HistoryCell.trailing),
+            horizStack.bottomAnchor.constraint(equalTo: customBackgroundView.bottomAnchor, constant: HistoryEnum.HistoryCell.bottom),
         ])
     }
 }
 
 //MARK: - configure cell
 extension HistoryCollectionViewCell {
-    func setupTitle(language: String, theme: String, result: String) {
+    func setupTitle(language: String, theme: String, result: String, date: String) {
         languageTitleLabel.text = language
         themeTitleLabel.text = theme
         resultTitleLabel.text = result
+        dateTitleLabel.text = date
     }
     
-    func configure(with data: String) {
-        languageLabel.text = data
-        themeLabel.text = data
-        resultLabel.text = data
+    func configure(with data: QuizResult) {
+        languageLabel.text = data.language
+        themeLabel.text = data.topic
+        resultLabel.text = data.resultText
+        dateLabel.text = data.formattedDate
     }
 }
 

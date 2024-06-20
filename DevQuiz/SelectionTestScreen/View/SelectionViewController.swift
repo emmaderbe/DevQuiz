@@ -44,7 +44,7 @@ private extension SelectionTestViewController {
 }
 
 extension SelectionTestViewController: SelectionTestProtocol {
-    func displayTopics(topics: [QuizTopic]) {
+    func displayTopics(topics: [TopicDTO]) {
         dataSource.updateTopics(topics)
         delegate.updateTopics(topics)
         DispatchQueue.main.async {
@@ -52,8 +52,8 @@ extension SelectionTestViewController: SelectionTestProtocol {
         }
     }
     
-    func navigateToView(with questions: [QuizQuestion]) {
-        let presenter = QuizPresenter()
+    func navigateToView(with questions: [QuestionDTO], language: LanguageDTO, topic: TopicDTO) {
+        let presenter = QuizPresenter(topic: topic, language: language)
         presenter.setSelectedQuiz(questions)
         let viewController = QuizViewController(presenter: presenter)
         navigationController?.pushViewController(viewController, animated: true)
@@ -61,7 +61,8 @@ extension SelectionTestViewController: SelectionTestProtocol {
 }
 
 extension SelectionTestViewController: SelectionTestDelegateProtocol {
-    func questionsSelected(_ questions: [QuizQuestion]) {
+    func questionsSelected(_ questions: [QuestionDTO], _ topic: TopicDTO) {
+        presenter.setSelectedTopic(topic)
         presenter.topicSelected(questions)
     }
 }

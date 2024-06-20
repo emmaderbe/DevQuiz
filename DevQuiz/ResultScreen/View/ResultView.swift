@@ -31,8 +31,8 @@ class ResultView: UIView {
     private let endQuizButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Закончить", for: .normal)
-        button.backgroundColor = UIColor(named: StringEnum.accentColor)
-        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(named: StringEnum.customBackgroundColor)
+        button.setTitleColor(UIColor(named: StringEnum.textColor), for: .normal)
         button.layer.cornerRadius = ResultEnum.ResultView.cornerRadius
         button.addTarget(self, action: #selector(endQuizButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false

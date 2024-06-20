@@ -1,16 +1,16 @@
 import UIKit
 
 protocol CategorySelectionDelegateProtocol: AnyObject {
-    func languageSelected(_ language: ProgrammingLanguage)
+    func languageSelected(_ language: LanguageDTO)
 }
 
 final class DevCategoryCollectionDelegate: NSObject, UICollectionViewDelegate {
-    private var categories: [Category] = []
+    private var categories: [LanguageCategoryDTO] = []
     weak var delegate: CategorySelectionDelegateProtocol?
 }
 
 extension DevCategoryCollectionDelegate {
-    func updateCategories(_ categories: [Category]) {
+    func updateCategories(_ categories: [LanguageCategoryDTO]) {
         self.categories = categories
     }
 }

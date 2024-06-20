@@ -28,15 +28,8 @@ class ResultViewController: UIViewController {
 private extension ResultViewController {
     func setupView() {
         navigationItem.hidesBackButton = true
-        setupTitle()
         setupResultTitle()
         setupButton()
-    }
-    
-    func setupTitle() {
-        resultView.setupTitle(with: ResultEnum.ResultImage.mediumResultTitleImage,
-                              and: ResultEnum.ResultString.mediumResultTitle,
-                              and:ResultEnum.ResultString.mediumResultDescription)
     }
     
     func setupResultTitle() {
@@ -58,6 +51,14 @@ private extension ResultViewController {
 }
 
 extension ResultViewController: ResultViewProtocol {
+    func setupTitleAndImage(title: String, description: String, image: String) {
+        resultView.setupTitle(with: image, and: title, and: description)
+    }
+    
+    func setupResultText(result: String, category: String, technology: String) {
+        resultView.setupResultText(result: result, category: category, technology: technology)
+    }
+    
     func navigateToView() {
         navigationController?.popToRootViewController(animated: true)
     }

@@ -2,11 +2,11 @@ import UIKit
 
 //MARK: - Property
 final class SelectionTestDataSource: NSObject, UICollectionViewDataSource {
-    private var topics: [QuizTopic] = []
+    private var topics: [TopicDTO] = []
 }
 
 extension SelectionTestDataSource {
-    func updateTopics(_ topics: [QuizTopic]) {
+    func updateTopics(_ topics: [TopicDTO]) {
         self.topics = topics
     }
 }

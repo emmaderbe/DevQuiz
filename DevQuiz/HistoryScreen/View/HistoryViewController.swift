@@ -30,11 +30,15 @@ private extension HistoryViewController {
     func setupView() {
         setupDataSource()
     }
-
+    
     func setupDataSource() {
         historyView.setDataSource(dataSource)
     }
 }
 
 extension HistoryViewController: HistoryPresenterProtocol {
+    func displayResults(_ results: [QuizResult]) {
+        dataSource.updateResults(results)
+        historyView.reloadData()
+    }
 }

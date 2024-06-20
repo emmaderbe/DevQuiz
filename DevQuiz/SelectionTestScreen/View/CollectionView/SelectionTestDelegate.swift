@@ -1,16 +1,16 @@
 import UIKit
 
 protocol SelectionTestDelegateProtocol: AnyObject {
-    func questionsSelected(_ questions: [QuizQuestion])
+    func questionsSelected(_ questions: [QuestionDTO], _ topic: TopicDTO)
 }
 
 final class SelectionTestDelegate: NSObject, UICollectionViewDelegate {
-    private var topics: [QuizTopic] = []
+    private var topics: [TopicDTO] = []
     weak var delegate: SelectionTestDelegateProtocol?
 }
 
 extension SelectionTestDelegate {
-    func updateTopics(_ topics: [QuizTopic]) {
+    func updateTopics(_ topics: [TopicDTO]) {
         self.topics = topics
     }
 }
@@ -22,7 +22,7 @@ extension SelectionTestDelegate {
             return
         }
         let selectedQuestions = topics[indexPath.row].questions
-        delegate?.questionsSelected(selectedQuestions)
+        delegate?.questionsSelected(selectedQuestions, topics[indexPath.row])
     }
 }
 
