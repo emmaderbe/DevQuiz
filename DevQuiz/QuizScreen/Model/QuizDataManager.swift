@@ -13,6 +13,7 @@ final class QuizDataManager: QuizDataManagerProtocol {
         quizResult.language = language.name
         quizResult.correctAnswers = correctAnswers
         quizResult.totalQuestions = totalQuestions
+        quizResult.date = Date()
         do {
             try context.save()
         } catch {

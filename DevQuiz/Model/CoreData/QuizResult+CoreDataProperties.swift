@@ -12,6 +12,7 @@ extension QuizResult {
     @NSManaged public var language: String?
     @NSManaged public var correctAnswers: Int32
     @NSManaged public var totalQuestions: Int32
+    @NSManaged public var date: Date?
 
 }
 

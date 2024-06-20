@@ -25,7 +25,8 @@ extension HistoryDataSource {
         let result = results[indexPath.row]
         cell.setupTitle(language: "Язык:",
                         theme: "Тема:",
-                        result: "Результаты:")
+                        result: "Результаты:", 
+                        date: "Дата прохождения:")
         cell.configure(with: result)
         return cell
     }
