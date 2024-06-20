@@ -14,7 +14,17 @@ class SettingsView: UIView {
         return segmentedControl
     }()
     
+    private let privacyPolicyButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Политика конфиденциальности", for: .normal)
+        button.setTitleColor(UIColor(named: StringEnum.accentColor), for: .normal)
+        button.addTarget(self, action: #selector(privacyPolicyButtonTapped), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     var onSegmentedControlTapped: ((Int) -> Void)?
+    var onPrivacyPolicyButtonTapped: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,6 +44,7 @@ private extension SettingsView {
         
         addSubview(titleLabel)
         addSubview(segmentedControl)
+        addSubview(privacyPolicyButton)
         
         segmentedControl.selectedSegmentIndex = AppearanceUserDefaults.shared.appearance.rawValue
     }
@@ -46,6 +57,9 @@ private extension SettingsView {
             
             segmentedControl.centerXAnchor.constraint(equalTo: centerXAnchor),
             segmentedControl.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            privacyPolicyButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            privacyPolicyButton.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
 }
@@ -53,6 +67,10 @@ private extension SettingsView {
 private extension SettingsView {
     @objc func segmentedChanged() {
         onSegmentedControlTapped?(segmentedControl.selectedSegmentIndex)
+    }
+    
+    @objc func privacyPolicyButtonTapped() {
+        onPrivacyPolicyButtonTapped?()
     }
 }
 

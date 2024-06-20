@@ -1,4 +1,5 @@
 import UIKit
+import SafariServices
 
 final class SettingsViewController: UIViewController {
     private let settingsView = SettingsView()
@@ -29,6 +30,7 @@ private extension SettingsViewController {
     func setupView() {
         setupTitle()
         setupSegmentControlAction()
+        setupPrivacyPolicyButtonAction()
     }
     
     func setupTitle() {
@@ -41,6 +43,19 @@ private extension SettingsViewController {
             self?.presenter.updateAppearanceMode(mode)
         }
     }
+    
+    func setupPrivacyPolicyButtonAction() {
+        settingsView.onPrivacyPolicyButtonTapped = { [weak self] in
+            self?.openPrivacyPolicy()
+        }
+    }
+    
+    func openPrivacyPolicy() {
+        guard let url = URL(string: "https://petdiet.tilda.ws/devquiz") else { return }
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true, completion: nil)
+    }
+
 }
 
 extension SettingsViewController: SettingsPresenterProtocol {
