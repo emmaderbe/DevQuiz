@@ -14,6 +14,16 @@ extension QuizResult {
     @NSManaged public var totalQuestions: Int32
     @NSManaged public var date: Date?
 
+    var formattedDate: String {
+        guard let date = date else { return "" }
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: date)
+    }
+
+    var resultText: String {
+        return "\(correctAnswers)/\(totalQuestions)"
+    }
 }
 
 extension QuizResult : Identifiable {

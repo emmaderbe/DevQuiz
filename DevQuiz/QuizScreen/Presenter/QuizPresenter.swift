@@ -36,29 +36,24 @@ extension QuizPresenter {
     
     func answerSelected(_ answer: String, buttonIndex: Int) {
         guard let questions = questions, currentQuestionIndex < questions.count else { return }
-        let correctAnswer = questions[currentQuestionIndex].correctAnswer
-        let isCorrect = answer == correctAnswer
+        
+        let isCorrect = checkAnswer(answer, for: questions[currentQuestionIndex])
         if isCorrect {
             correctAnswersCount += 1
         }
         view?.highlightOptionButton(isCorrect: isCorrect, buttonIndex: buttonIndex)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-            self?.currentQuestionIndex += 1
-            if self?.currentQuestionIndex ?? 0 < questions.count {
-                self?.view?.resetOptionButtons()
-                self?.showCurrentQuestion()
-            } else {
-                self?.saveQuizResult()
-                self?.view?.navigateToResultView(result: "\(self?.correctAnswersCount ?? 0)/\(questions.count)",
-                                                 category: self?.selectedTopic.name ?? "",
-                                                 technology: self?.selectedLanguage.name ?? "")
-            }
+            self?.proceedToNextQuestionOrEndQuiz()
         }
     }
 }
 
 private extension QuizPresenter {
+    func checkAnswer(_ answer: String, for question: QuestionDTO) -> Bool {
+        return answer == question.correctAnswer
+    }
+    
     func showCurrentQuestion() {
         guard let questions = questions, currentQuestionIndex < questions.count else { return }
         let question = questions[currentQuestionIndex]
@@ -67,10 +62,32 @@ private extension QuizPresenter {
                               total: questions.count)
     }
     
+    func proceedToNextQuestionOrEndQuiz() {
+        guard let questions = questions else { return }
+        currentQuestionIndex += 1
+        
+        if currentQuestionIndex < questions.count {
+            view?.resetOptionButtons()
+            showCurrentQuestion()
+        } else {
+            endQuiz()
+        }
+    }
+}
+
+private extension QuizPresenter {
     func saveQuizResult() {
         coreDataManager.saveQuizResult(topic: selectedTopic,
                                              language: selectedLanguage,
                                              correctAnswers: Int32(correctAnswersCount),
                                              totalQuestions: Int32(questions?.count ?? 0))
+    }
+    
+    func endQuiz() {
+        guard let questions = questions else { return }
+        saveQuizResult()
+        view?.navigateToResultView(result: "\(correctAnswersCount)/\(questions.count)",
+                                   category: selectedTopic.name,
+                                   technology: selectedLanguage.name)
     }
 }

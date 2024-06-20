@@ -72,10 +72,10 @@ private extension HistoryCollectionViewCell {
             customBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor),
             customBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            horizStack.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: 16),
-            horizStack.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: 16),
-            horizStack.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: -16),
-            horizStack.bottomAnchor.constraint(equalTo: customBackgroundView.bottomAnchor, constant: -16),
+            horizStack.topAnchor.constraint(equalTo: customBackgroundView.topAnchor, constant: HistoryEnum.HistoryCell.top),
+            horizStack.leadingAnchor.constraint(equalTo: customBackgroundView.leadingAnchor, constant: HistoryEnum.HistoryCell.leading),
+            horizStack.trailingAnchor.constraint(equalTo: customBackgroundView.trailingAnchor, constant: HistoryEnum.HistoryCell.trailing),
+            horizStack.bottomAnchor.constraint(equalTo: customBackgroundView.bottomAnchor, constant: HistoryEnum.HistoryCell.bottom),
         ])
     }
 }
@@ -92,14 +92,8 @@ extension HistoryCollectionViewCell {
     func configure(with data: QuizResult) {
         languageLabel.text = data.language
         themeLabel.text = data.topic
-        resultLabel.text = "\(data.correctAnswers)/\(data.totalQuestions)"
-        
-        if let date = data.date {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .none
-            dateLabel.text = formatter.string(from: date)
-        }
+        resultLabel.text = data.resultText
+        dateLabel.text = data.formattedDate
     }
 }
 

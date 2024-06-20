@@ -62,6 +62,7 @@
 		C5C6505F2C246F7400253708 /* QuizResult+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C6505D2C246F7400253708 /* QuizResult+CoreDataClass.swift */; };
 		C5C650602C246F7400253708 /* QuizResult+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C6505E2C246F7400253708 /* QuizResult+CoreDataProperties.swift */; };
 		C5C650622C247BF900253708 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C650612C247BF900253708 /* CoreDataManager.swift */; };
+		C5C650652C247D7F00253708 /* HistoryEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5C650642C247D7F00253708 /* HistoryEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		C5C6505D2C246F7400253708 /* QuizResult+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizResult+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C5C6505E2C246F7400253708 /* QuizResult+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QuizResult+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C5C650612C247BF900253708 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C5C650642C247D7F00253708 /* HistoryEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +265,7 @@
 		C5AAAF4A2C1F3D6300003D24 /* HistoryScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C5C650632C247D6A00253708 /* Enum */,
 				C5AAAF4C2C1F633C00003D24 /* View */,
 				C5AAAF4B2C1F633400003D24 /* Presenter */,
 			);
@@ -494,6 +497,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		C5C650632C247D6A00253708 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				C5C650642C247D7F00253708 /* HistoryEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -581,6 +592,7 @@
 				C5AAAF7D2C2318F300003D24 /* NetworkService.swift in Sources */,
 				C5AAAF602C1F944500003D24 /* SettingsViewController.swift in Sources */,
 				C5AAAF1D2C1A1AD700003D24 /* SelectionTestView.swift in Sources */,
+				C5C650652C247D7F00253708 /* HistoryEnum.swift in Sources */,
 				C5AAAF552C1F825100003D24 /* HistoryViewController.swift in Sources */,
 				C5B2EEFC2C1739E4008A9ABC /* DevQuiz.xcdatamodeld in Sources */,
 				C5AAAF302C1B7F6F00003D24 /* QuizView.swift in Sources */,
